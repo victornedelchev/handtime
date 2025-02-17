@@ -5,7 +5,7 @@ SoftUni React Project
 ## 1. Initialize Project
 
 - [x] Initialize git repo
-- [ ] Add SoftUni practice server
+- [x] Add SoftUni practice server
 - [ ] Add base vite react project as client
 - [ ] CleanUp client
 - [ ] Add project resource
