@@ -6,8 +6,8 @@ SoftUni React Project
 
 - [x] Initialize git repo
 - [x] Add SoftUni practice server
-- [ ] Add base vite react project as client
-- [ ] CleanUp client
+- [x] Add base vite react project as client
+- [x] CleanUp client
 - [ ] Add project resource
 - [ ] Convert HTML to JSX
 - [ ] Separate HTML into components
