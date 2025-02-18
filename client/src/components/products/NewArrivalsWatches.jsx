@@ -1,4 +1,4 @@
-export default function NewArrivals() {
+export default function NewArrivalsWatches() {
   return (
     <section className="product_section ">
       <div className="container">
