@@ -17,3 +17,6 @@ SoftUni React Project
 - [x] Install react-router-dom
 - [x] Setup react-router-dom
 - [x] Add routes in App.jsx
+- [x] Add all links in navigation
+- [x] Install tailwind CSS
+- [x] Setup tailwind CSS

@@ -1,4 +1,4 @@
-export default function Contacts() {
+export default function ContactsUs() {
   return (
     <section className="contact_section layout_padding">
       <div className="container">
