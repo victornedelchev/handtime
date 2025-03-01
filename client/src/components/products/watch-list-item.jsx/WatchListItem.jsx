@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function WatchListItem({ watch }) {
   return (
     <div className="box">
@@ -25,7 +27,7 @@ export default function WatchListItem({ watch }) {
         </div>
       </div>
       <div className="btn-box">
-        <a href="">Details</a>
+        <Link to={`/watches/${watch._id}/details`}>Details</Link>
       </div>
     </div>
   );
