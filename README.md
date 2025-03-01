@@ -29,13 +29,13 @@ SoftUni React Project
 
 ## 4. Page implementation
 
-- [ ] Watches list
+- [x] Watches list
  - [x] Add add persisted data in the server data folder
-- [ ] Details
-- [ ] Details link
-- [ ] Details route
-- [ ] API function
- - [ ] Get one watch 
+- [x] Details
+- [x] Details link
+- [x] Details route
+- [x] API function
+ - [x] Get one watch 
  - [x] Get all watches 
  
 

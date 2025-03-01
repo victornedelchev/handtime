@@ -11,7 +11,6 @@ function useGetAllWatches() {
         const result = await watchAPI.getAllWatches();
         setWatches(result);
         console.log(watches);
-        
       } catch (error) {
         console.error(error);
       }
@@ -21,4 +20,21 @@ function useGetAllWatches() {
   return [watches, setWatches];
 }
 
-export { useGetAllWatches };
+function useOneWatch(watchId) {
+  const [watch, setWatch] = useState({});
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const result = await watchAPI.getOneWatch(watchId);
+        setWatch(result);
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  }, [watchId]);
+
+  return [watch, setWatch];
+}
+
+export { useGetAllWatches, useOneWatch };
