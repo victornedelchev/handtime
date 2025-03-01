@@ -23,11 +23,21 @@ SoftUni React Project
 
 ## 3. Create service layer
 
-- [ ] Service layer architecture
-- [ ] Abstract requester
-- [ ] Add watches API
+- [x] Service layer architecture
+- [x] Abstract requester
+- [x] Add watches API
 
 ## 4. Page implementation
 
 - [ ] Watches list
  - [x] Add add persisted data in the server data folder
+- [ ] Details
+- [ ] Details link
+- [ ] Details route
+- [ ] API function
+ - [ ] Get one watch 
+ - [x] Get all watches 
+ 
+
+## 5. API hooks
+ - [x] Watches API hook
