@@ -10,6 +10,7 @@ import Header from "./components/Header/Header";
 import ContactsUs from "./components/contactsUs/ContactsUs";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
+import Details from "./components/details/Details";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/client" element={<Client />} />
         <Route path="/contacts-us" element={<ContactsUs />} />
         <Route path="/info" element={<Info />} />
+        <Route path="/watches/:watchId/details" element={<Details />} />
       </Routes>
       <Footer />
     </>
