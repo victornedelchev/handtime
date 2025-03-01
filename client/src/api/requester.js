@@ -14,7 +14,7 @@ export default async function requester(method, url, data) {
     options.body = JSON.stringify(data);
   }
 
-  const response = await fetch(url, data);
+  const response = await fetch(url, options);
   const result = await response.json();
 
   if (!response.ok) {
