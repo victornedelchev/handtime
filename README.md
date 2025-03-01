@@ -20,3 +20,14 @@ SoftUni React Project
 - [x] Add all links in navigation
 - [x] Install tailwind CSS
 - [x] Setup tailwind CSS
+
+## 3. Create service layer
+
+- [ ] Service layer architecture
+- [ ] Abstract requester
+- [ ] Add watches API
+
+## 4. Page implementation
+
+- [ ] Watches list
+ - [x] Add add persisted data in the server data folder
