@@ -1,4 +1,4 @@
-import BASE_URL from "../constansts/baseURL";
+import BASE_URL from "../constants/baseURL";
 import * as requester from "./requester";
 
 const getAllWatches = async () => {
