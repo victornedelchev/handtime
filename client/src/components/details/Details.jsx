@@ -7,7 +7,6 @@ export default function Details() {
   const { watchId } = useParams();
 
   const [watch, setWatch] = useOneWatch(watchId);
-  // console.log(watch);
 
   if (!watch) {
     return <div className="details-loading">Loading...</div>;

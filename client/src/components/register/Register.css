@@ -1,7 +1,7 @@
 .wrapper {
   position: relative;
   width: 420px;
-  height: 525px;
+  height: auto;
   background-color: seagreen;
   border-radius: 10px;
   color: #fff;

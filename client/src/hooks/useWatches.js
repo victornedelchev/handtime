@@ -10,7 +10,6 @@ function useGetAllWatches() {
       try {
         const result = await watchAPI.getAllWatches();
         setWatches(result);
-        console.log(watches);
       } catch (error) {
         console.error(error);
       }

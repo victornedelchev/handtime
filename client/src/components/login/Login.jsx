@@ -64,7 +64,7 @@ export default function Login() {
             <p
               style={{
                 color: "red",
-                padding: "5px",
+                paddingBottom: "30px",
                 margin: "auto",
                 textAlign: "center",
               }}
