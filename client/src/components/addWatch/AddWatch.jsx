@@ -1,28 +1,32 @@
-export default function ContactsUs() {
+export default function AddWatch() {
   return (
     <section className="contact_section layout_padding">
       <div className="container">
         <div className="heading_container">
-          <h2>Contact Us</h2>
+          <h2>Add watch</h2>
         </div>
         <div className="row">
           <div className="col-md-6">
             <div className="form_container">
               <form action="">
                 <div>
-                  <input type="text" placeholder="Your Name" />
+                  <input type="text" name="brand" placeholder="Brand" />
                 </div>
                 <div>
-                  <input type="text" placeholder="Phone Number" />
+                  <input type="text" name="model" placeholder="Model" />
                 </div>
                 <div>
-                  <input type="email" placeholder="Email" />
+                  <input type="number" name="price" placeholder="Price" />
+                </div>
+                <div>
+                  <input type="price" name="imageUrl" placeholder="Image URL" />
                 </div>
                 <div>
                   <input
                     type="text"
+                    name="summary"
                     className="message-box"
-                    placeholder="Message"
+                    placeholder="Summary"
                   />
                 </div>
                 <div className="btn_box">
