@@ -15,10 +15,14 @@ export default async function requester(method, url, data) {
   }
 
   const response = await fetch(url, options);
-  const result = await response.json();
-
-  if (!response.ok) {
-    throw result;
+  let result;
+  try {
+    result = await response.json();
+  } catch (error) {
+    throw {
+      status: response.status,
+      message: "Server returned non-json response",
+    };
   }
 
   if (!response.ok) {

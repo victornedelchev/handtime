@@ -45,9 +45,9 @@ SoftUni React Project
 ## 6.Authentication
  - [ ] Auth API
   - [x] Login
-  - [ ] Register
+  - [x] Register
   - [ ] Logout
 - [ ]  Auth API hook
  - [x] Login
- - [ ] Register
+ - [x] Register
  - [ ] Logout  
