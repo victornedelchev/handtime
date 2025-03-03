@@ -7,6 +7,7 @@ import { FaUser, FaLock } from "react-icons/fa";
 import "./Login.css";
 import { useLogin } from "../../hooks/useAuth";
 import useForm from "../../hooks/useForm";
+import { isValidEmail } from "../../utils/validation";
 
 const initialValues = {
   email: "",
@@ -20,6 +21,20 @@ export default function Login() {
   const login = useLogin();
 
   const loginHandler = async ({ email, password }) => {
+    if (!email) {
+      return setError("Email is required!");
+    } else if (!isValidEmail(email)) {
+      return setError("This is not valid email format!");
+    }
+
+    if (!password) {
+      return setError("Password is required!");
+    } else if (password.length < 4) {
+      return setError("Password must be more than 4 characters!")
+    } else if (password.length > 10) {
+      return setError("Password cannot exceed more than 10 characters!")
+    }
+
     try {
       await login(email, password);
       navigate("/");
@@ -28,7 +43,7 @@ export default function Login() {
     }
   };
 
-  const { values, changeHandler, submitHandler } = useForm(
+  const { formValues, changeHandler, submitHandler } = useForm(
     initialValues,
     loginHandler
   );
@@ -43,8 +58,8 @@ export default function Login() {
               type="text"
               name="email"
               placeholder="Email"
-              required
-              value={values.email}
+              // required
+              value={formValues.email}
               onChange={changeHandler}
             />
             <FaUser className="icon" />
@@ -54,8 +69,8 @@ export default function Login() {
               type="password"
               name="password"
               placeholder="Password"
-              required
-              value={values.password}
+              // required
+              value={formValues.password}
               onChange={changeHandler}
             />
             <FaLock className="icon" />
@@ -67,6 +82,7 @@ export default function Login() {
                 paddingBottom: "30px",
                 margin: "auto",
                 textAlign: "center",
+                fontWeight: "bold",
               }}
             >
               <span>{error}</span>

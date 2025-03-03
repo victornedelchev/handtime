@@ -35,24 +35,23 @@ export default function Header() {
                 </Link>
               </li>
               <li className="nav-item">
-                    <Link className="nav-link" to="/products">
-                      Products
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/client">
-                      Testimonial
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/about">
-                      {" "}
-                      About
-                    </Link>
-                  </li>
+                <Link className="nav-link" to="/products">
+                  Products
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/client">
+                  Testimonial
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/about">
+                  {" "}
+                  About
+                </Link>
+              </li>
               {isAuthenticated ? (
                 <>
-
                   <li className="nav-item">
                     <Link className="nav-link" to="/add-watch">
                       Add Watch
@@ -64,7 +63,9 @@ export default function Header() {
                       Logout
                     </Link>
                   </li>
-                  <li style={{color: "#8019c8"}}>Welcome {username}</li>
+                  <li style={{ color: "#8019c8", fontWeight: "bold" }}>
+                    WELCOME {username.toUpperCase()}
+                  </li>
                 </>
               ) : (
                 <>
@@ -80,7 +81,7 @@ export default function Header() {
                       Register
                     </Link>
                   </li>
-                  <li style={{color: "#8019c8"}}>WELCOME GUESTS</li>
+                  <li style={{ color: "#8019c8" }}>WELCOME GUESTS</li>
                 </>
               )}
             </ul>
