@@ -21,6 +21,10 @@ export default async function requester(method, url, data) {
     throw result;
   }
 
+  if (!response.ok) {
+    throw result;
+  }
+
   return result;
 }
 

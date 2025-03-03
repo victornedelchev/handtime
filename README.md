@@ -41,3 +41,13 @@ SoftUni React Project
 
 ## 5. API hooks
  - [x] Watches API hook
+  
+## 6.Authentication
+ - [ ] Auth API
+  - [x] Login
+  - [ ] Register
+  - [ ] Logout
+- [ ]  Auth API hook
+ - [x] Login
+ - [ ] Register
+ - [ ] Logout  
