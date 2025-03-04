@@ -36,4 +36,12 @@ function useOneWatch(watchId) {
   return [watch, setWatch];
 }
 
-export { useGetAllWatches, useOneWatch };
+function useCreateWatch() {
+  const watchCreateHandler = (watchData) => {
+    return watchAPI.createWatch(watchData);
+  };
+
+  return watchCreateHandler;
+}
+
+export { useGetAllWatches, useOneWatch, useCreateWatch };
