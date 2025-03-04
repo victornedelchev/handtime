@@ -62,7 +62,8 @@ SoftUni React Project
 
  ## 7. UI implementation
 - [x] Dynamic navigation
-- [ ] Create watch
+- [x] Create watch
  - [x] API function
  - [x] Create hook
+ - [x] Form validation
     

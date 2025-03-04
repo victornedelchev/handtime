@@ -1,13 +1,51 @@
+import { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 
-import { useCreateWatch } from "../../hooks/useWatches";
 import useForm from "../../hooks/useForm";
+import { useCreateWatch } from "../../hooks/useWatches";
 
 export default function AddWatch() {
+  const [error, setError] = useState("");
+
   const navigate = useNavigate();
   const createWatch = useCreateWatch();
 
   const createHandler = async (values) => {
+    if (!values.brand) {
+      return setError("Brand is required!");
+    } else if (values.brand.length < 3) {
+      return setError("Brand must be more than 2 characters!");
+    } else if (values.brand.length > 30) {
+      return setError("Brand cannot exceed more than 15 characters!");
+    }
+
+    if (!values.model) {
+      return setError("Model is required!");
+    } else if (values.model.length < 3) {
+      return setError("Model must be more than 2 characters!");
+    } else if (values.model.length > 60) {
+      return setError("Model cannot exceed more than 60 characters!");
+    }
+
+    if (!values.price) {
+      return setError("Price is required!");
+    } else if (Number(values.price) < 0) {
+      return setError("Price cannot be negative number!");
+    }
+
+    if (!values.imageUrl) {
+      return setError("Image URL is required!");
+    }
+
+    if (!values.summary) {
+      return setError("Summary is required!");
+    } else if (values.summary.length < 10) {
+      return setError("Brand must be more than 10 characters!");
+    } else if (values.summary.length > 1000) {
+      return setError("Summary cannot exceed more than 1000 characters!");
+    }
+
     try {
       const { _id: watchId } = await createWatch(values);
       navigate(`/watches/${watchId}/details`);
@@ -86,6 +124,19 @@ export default function AddWatch() {
                     onChange={changeHandler}
                   />
                 </div>
+                {error && (
+                  <p
+                    style={{
+                      color: "red",
+                      paddingBottom: "30px",
+                      margin: "auto",
+                      textAlign: "center",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    <span>{error}</span>
+                  </p>
+                )}
                 <div className="btn_box">
                   <button type="submit">Add</button>
                 </div>
