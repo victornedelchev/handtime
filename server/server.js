@@ -1773,6 +1773,31 @@
           "This year it comes back with a new design that now features a more elegant dial – giving the watch a purer look – but still respecting its sporty roots. Like biking, Tissot is where passion meets innovation and style. The T-Race collection is inspired by that lifestyle and – freedom, the open road, and passion: it is the biker’s watch of choice. The T-Race family keeps the earer immersed in the mechanical environment, and constantly evokes its spirit. For example, there is a brake disc and calibre on the bezel, the pushes are inspired by handlebars, and engine cooling fins are depicted on the side of case. It is water resistant, with a Quartz chronograph movement, and distinct hour and minute hands coated with SuperLuminova. Tissot has taken inspiration from their collaboration to produce watches that reflect the dynamic natures of bikes themselves and the emotion of the sport.",
         _id: "d3e0595f-8b6f-46dc-850e-bae1949878ce",
       },
+      "48e12f12-22ea-4a1c-9fed-bad69f7a2d02": {
+        _ownerId: "798fcc57-70f0-45ce-b55f-a0eef3a99751",
+        brand: "Seiko",
+        model:
+          "Astron x Médecins Sans Frontières GPS Solar Chronograph 2025 Limited Edition",
+        price: "2000",
+        imageUrl:
+          "https://www.seikoboutique.co.uk/wp-content/uploads/2025/02/SSH173J1.png",
+        summary:
+          "Proceeds from the sale of this limited edition model will be donated by Seiko to the international relief organisation Médecins Sans Frontières. MSF was founded to provide medical assistance to people affected by conflict, epidemics, disasters or excluded from healthcare and comprises 45,000 health professionals in over 70 countries.  This piece is limited to only 800 pieces worldwide, crafted from super-hard coated titanium and a white ceramic bezel insert, with impressive scratch-resistance. The ceramic bezel features Arabic numerals for the movement’s chronograph function. The hands and indices have a strong coating of Lumibrite, for clear visibility in dark conditions. Under the dual-curve sapphire crystal glass its energy efficient solar cell is within the white coloured dial, for charging from natural or artificial light without interference.  It features a new in-house 5X83 solar-powered GPS movement, that not only charges efficiently, but also features a 1/20th of a second chronograph function for measuring elapsed time. The subdial at 12 o’clock is for the chronograph feature, the subdial at 9 o’clock for setting modes, and the subdial at 6 o’clock for a dual-time feature.  The Astron Médecins Sans Frontières GPS Solar Chronograph comes in its own special edition watch case.  Seiko Astron: the world’s first GPS solar watch – powered by light, automatically adjusted to your exact time through the latest satellite technology.  *In an actual product, the case back direction might be different from the photograph.",
+        _createdOn: 1741098893608,
+        _id: "48e12f12-22ea-4a1c-9fed-bad69f7a2d02",
+      },
+      "2a9cb2df-c747-4a93-b6cc-99a92c5df979": {
+        _ownerId: "798fcc57-70f0-45ce-b55f-a0eef3a99751",
+        brand: "Rado",
+        model: "True Square Automatic Open Heart",
+        price: "2600",
+        imageUrl:
+          "https://www.rado.com/media/catalog/product/t/r/truesquare_r27083712_sld_web.png?im=AspectCrop=(1980,1980),allowExpansion,location=(0.5,0.5);Resize=(1980,1980),aspect=fill;Crop=(0,0,1980,1980),gravity=Center",
+        summary:
+          "Experience the perfect fusion of artistry and precision with the Rado True Square Automatic Open Heart watch. This remarkable timepiece showcases a captivating open heart design, allowing you to admire the intricate movements of the automatic Rado calibre R734, with its 80-hour power reserve. With a 38 mm case size, the polished plasma high-tech ceramic case and crown exude a sleek and contemporary allure. The flat sapphire crystal, with anti-reflective coating on both sides, offers exceptional clarity. The grey dial is accentuated by rose gold-coloured bevels. Twelve diamonds add a touch of luxury and sophistication. The rose gold-coloured hands, enhanced with white veneer and white Super-LumiNova®, ensure excellent visibility, while adding a subtle touch of elegance. Completing the ensemble is the polished plasma high-tech ceramic bracelet, offering both comfort and durability.",
+        _createdOn: 1741101326904,
+        _id: "2a9cb2df-c747-4a93-b6cc-99a92c5df979",
+      },
     },
   };
   var rules$1 = {
