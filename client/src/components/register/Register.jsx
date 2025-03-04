@@ -47,9 +47,9 @@ export default function Register() {
     if (!values.rePassword) {
       return setError("Confirm Password is required!");
     } else if (values.rePassword.length < 4) {
-      return setError("Confirm Password must be more than 4 characters!")
+      return setError("Confirm password must be more than 4 characters!")
     } else if (values.rePassword.length > 15) {
-      return setError("Confirm Password exceed more than 15 characters!")
+      return setError("Confirm password exceed more than 15 characters!")
     }
     
     try {
