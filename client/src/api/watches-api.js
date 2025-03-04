@@ -8,11 +8,19 @@ const getAllWatches = async () => {
   return watches;
 };
 
-const getOneWatch = (watchId) =>  requester.get(`${BASE_URL}/watches/${watchId}`);
+const getOneWatch = (watchId) =>
+  requester.get(`${BASE_URL}/watches/${watchId}`);
+
+const createWatch = async (watchData) => {
+  const result = await requester.post(`${BASE_URL}/watches`, watchData);
+
+  return result;
+};
 
 const watchesAPI = {
   getAllWatches,
   getOneWatch,
+  createWatch,
 };
 
 export default watchesAPI;
