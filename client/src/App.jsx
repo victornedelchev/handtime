@@ -14,6 +14,7 @@ import Register from "./components/register/Register";
 import Details from "./components/details/Details";
 import AddWatch from "./components/addWatch/AddWatch";
 import { AuthContext } from "./contexts/authContext";
+import NotFound from "./components/notFound/NotFound";
 
 function App() {
   const [authState, setAuthState] = useState({});
@@ -46,6 +47,7 @@ function App() {
         <Route path="/add-watch" element={<AddWatch />} />
         <Route path="/info" element={<Info />} />
         <Route path="/watches/:watchId/details" element={<Details />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </AuthContext.Provider>
