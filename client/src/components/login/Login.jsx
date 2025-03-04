@@ -32,7 +32,7 @@ export default function Login() {
     } else if (password.length < 4) {
       return setError("Password must be more than 4 characters!")
     } else if (password.length > 10) {
-      return setError("Password cannot exceed more than 10 characters!")
+      return setError("Password cannot exceed more than 15 characters!")
     }
 
     try {
@@ -55,10 +55,9 @@ export default function Login() {
           <h1>Login</h1>
           <div className="input-box">
             <input
-              type="text"
+              type="email"
               name="email"
               placeholder="Email"
-              // required
               value={formValues.email}
               onChange={changeHandler}
             />
@@ -69,7 +68,6 @@ export default function Login() {
               type="password"
               name="password"
               placeholder="Password"
-              // required
               value={formValues.password}
               onChange={changeHandler}
             />
