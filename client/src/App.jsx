@@ -13,8 +13,8 @@ import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import Details from "./components/details/Details";
 import AddWatch from "./components/addWatch/AddWatch";
-import { AuthContext } from "./contexts/authContext";
 import NotFound from "./components/notFound/NotFound";
+import { AuthContext } from "./contexts/authContext";
 
 function App() {
   const [authState, setAuthState] = useState({});

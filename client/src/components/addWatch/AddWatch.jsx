@@ -1,4 +1,34 @@
+import { useNavigate } from "react-router-dom";
+
+import { useCreateWatch } from "../../hooks/useWatches";
+import useForm from "../../hooks/useForm";
+
 export default function AddWatch() {
+  const navigate = useNavigate();
+  const createWatch = useCreateWatch();
+
+  const createHandler = async (values) => {
+    try {
+      const { _id: watchId } = await createWatch(values);
+      navigate(`/watches/${watchId}/details`);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const initialValues = {
+    brand: "",
+    model: "",
+    price: "",
+    imageUrl: "",
+    summary: "",
+  };
+
+  const { formValues, changeHandler, submitHandler } = useForm(
+    initialValues,
+    createHandler
+  );
+
   return (
     <section className="contact_section layout_padding">
       <div className="container">
@@ -8,18 +38,43 @@ export default function AddWatch() {
         <div className="row">
           <div className="col-md-6">
             <div className="form_container">
-              <form action="">
+              <form onSubmit={submitHandler}>
                 <div>
-                  <input type="text" name="brand" placeholder="Brand" />
+                  <input
+                    type="text"
+                    name="brand"
+                    placeholder="Brand"
+                    value={formValues.brand}
+                    onChange={changeHandler}
+                  />
                 </div>
                 <div>
-                  <input type="text" name="model" placeholder="Model" />
+                  <input
+                    type="text"
+                    name="model"
+                    placeholder="Model"
+                    value={formValues.model}
+                    onChange={changeHandler}
+                  />
                 </div>
                 <div>
-                  <input type="number" name="price" placeholder="Price" />
+                  <input
+                    type="number"
+                    min="1"
+                    name="price"
+                    placeholder="Price"
+                    value={formValues.price}
+                    onChange={changeHandler}
+                  />
                 </div>
                 <div>
-                  <input type="price" name="imageUrl" placeholder="Image URL" />
+                  <input
+                    type="text"
+                    name="imageUrl"
+                    placeholder="Image URL"
+                    value={formValues.imageUrl}
+                    onChange={changeHandler}
+                  />
                 </div>
                 <div>
                   <input
@@ -27,10 +82,12 @@ export default function AddWatch() {
                     name="summary"
                     className="message-box"
                     placeholder="Summary"
+                    value={formValues.summary}
+                    onChange={changeHandler}
                   />
                 </div>
                 <div className="btn_box">
-                  <button>SEND</button>
+                  <button type="submit">Add</button>
                 </div>
               </form>
             </div>
