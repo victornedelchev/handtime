@@ -66,4 +66,8 @@ SoftUni React Project
  - [x] API function
  - [x] Create hook
  - [x] Form validation
+
+## 8. Refactoring 
+ - [x] Extract auth state from App component
+ - [ ] Persist auth state 
     
