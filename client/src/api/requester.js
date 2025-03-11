@@ -9,11 +9,10 @@ export default async function requester(method, url, data) {
       ["X-Authorization"]: accessToken,
     };
   }
-  
+
   if (method !== "GET") {
     options.method = method;
   }
-
 
   if (data) {
     options.headers = {
@@ -25,7 +24,12 @@ export default async function requester(method, url, data) {
   }
 
   const response = await fetch(url, options);
+  if (response.status === 204) {
+    return;
+  }
+
   let result;
+  
   try {
     result = await response.json();
   } catch (error) {

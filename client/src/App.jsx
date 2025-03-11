@@ -9,9 +9,11 @@ import Home from "./components/home/Home";
 import Header from "./components/Header/Header";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
+import Logout from "./components/logout/Logout";
 import Details from "./components/details/Details";
 import AddWatch from "./components/addWatch/AddWatch";
 import NotFound from "./components/notFound/NotFound";
+
 import AuthContextProvider from "./contexts/AuthContextProvider";
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/logout" element={<Logout />} />
         <Route path="/products" element={<Products />} />
         <Route path="/client" element={<Client />} />
         <Route path="/add-watch" element={<AddWatch />} />

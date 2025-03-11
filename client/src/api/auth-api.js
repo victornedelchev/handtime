@@ -10,3 +10,5 @@ export const register = (username, email, password) =>
     email,
     password,
   });
+
+export const logout = () => requester.get(`${API_URL}/logout`);
