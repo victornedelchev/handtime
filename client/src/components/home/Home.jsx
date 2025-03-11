@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Home() {
   return (
     <>
@@ -27,9 +29,9 @@ export default function Home() {
                           <a href="" className="btn1">
                             Contact Us
                           </a>
-                          <a href="" className="btn2">
+                          <Link to="/about" className="btn2">
                             About Us
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
