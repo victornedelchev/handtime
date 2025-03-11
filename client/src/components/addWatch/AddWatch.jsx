@@ -41,7 +41,7 @@ export default function AddWatch() {
     if (!values.summary) {
       return setError("Summary is required!");
     } else if (values.summary.length < 10) {
-      return setError("Brand must be more than 10 characters!");
+      return setError("Summary must be more than 10 characters!");
     } else if (values.summary.length > 1000) {
       return setError("Summary cannot exceed more than 1000 characters!");
     }
