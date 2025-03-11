@@ -1,8 +1,8 @@
-import { useState } from "react";
 import { AuthContext } from "./authContext";
+import usePersistedState from "../hooks/usePersistedState";
 
 export default function AuthContextProvider(props) {
-  const [authState, setAuthState] = useState({});
+  const [authState, setAuthState] = usePersistedState('auth', {});
 
   const changeAuthState = (state) => {
     localStorage.setItem("accessToken", state.accessToken);
@@ -18,6 +18,7 @@ export default function AuthContextProvider(props) {
     isAuthenticated: !!authState.username,
     changeAuthState,
   };
+
   return (
     <AuthContext.Provider value={contextData}>
       {props.children}

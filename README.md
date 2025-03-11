@@ -69,5 +69,5 @@ SoftUni React Project
 
 ## 8. Refactoring 
  - [x] Extract auth state from App component
- - [ ] Persist auth state 
+ - [x] Persist auth state 
     
