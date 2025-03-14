@@ -1,16 +1,27 @@
+import watchesAPI from "../../api/watches-api";
 import { useOneWatch } from "../../hooks/useWatches";
 import "./details.css";
 
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function Details() {
   const { watchId } = useParams();
+  const navigate = useNavigate();
 
   const [watch, setWatch] = useOneWatch(watchId);
 
   if (!watch) {
     return <div className="details-loading">Loading...</div>;
   }
+
+  const watchDeleteHandler = async () => {
+    try {
+      await watchesAPI.deleteWatch(watchId);
+      navigate("/");
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <section className="details-section">
@@ -36,7 +47,9 @@ export default function Details() {
               </div>
               <div className="details-actions">
                 <button className="btn-edit">Edit</button>
-                <button className="btn-delete">Delete</button>
+                <button className="btn-delete" onClick={watchDeleteHandler}>
+                  Delete
+                </button>
               </div>
             </div>
           </div>

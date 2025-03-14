@@ -66,6 +66,9 @@ SoftUni React Project
  - [x] API function
  - [x] Create hook
  - [x] Form validation
+- [x] Delete watch
+- [ ] Edit watch
+- [ ] Latest watches
 
 ## 8. Refactoring 
  - [x] Extract auth state from App component

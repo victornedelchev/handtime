@@ -17,10 +17,14 @@ const createWatch = async (watchData) => {
   return result;
 };
 
+const deleteWatch = (watchId) =>
+  requester.del(`${BASE_URL}/watches/${watchId}`);
+
 const watchesAPI = {
   getAllWatches,
   getOneWatch,
   createWatch,
+  deleteWatch,
 };
 
 export default watchesAPI;
