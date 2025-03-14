@@ -3,17 +3,19 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import watchesAPI from "../../api/watches-api";
 import { useOneWatch } from "../../hooks/useWatches";
 import "./details.css";
-
+import { useAuthContext } from "../../hooks/useAuthConetxt";
 
 export default function Details() {
   const { watchId } = useParams();
   const navigate = useNavigate();
-
-  const [watch, setWatch] = useOneWatch(watchId);
+  const [watch] = useOneWatch(watchId);
+  const { userId } = useAuthContext();
 
   if (!watch) {
     return <div className="details-loading">Loading...</div>;
   }
+
+  const isOwner = userId === watch._ownerId;
 
   const watchDeleteHandler = async () => {
     try {
@@ -46,12 +48,16 @@ export default function Details() {
                 <h3>Specifications</h3>
                 {watch.summary}
               </div>
-              <div className="details-actions">
-                <Link to={`/watches/${watchId}/edit`} className="btn-edit">Edit</Link>
-                <button className="btn-delete" onClick={watchDeleteHandler}>
-                  Delete
-                </button>
-              </div>
+              {isOwner && (
+                <div className="details-actions">
+                  <Link to={`/watches/${watchId}/edit`} className="btn-edit">
+                    Edit
+                  </Link>
+                  <button className="btn-delete" onClick={watchDeleteHandler}>
+                    Delete
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
