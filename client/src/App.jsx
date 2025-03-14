@@ -12,6 +12,7 @@ import Register from "./components/register/Register";
 import Logout from "./components/logout/Logout";
 import Details from "./components/details/Details";
 import AddWatch from "./components/addWatch/AddWatch";
+import EditWatch from "./components/editWatch/EditWatch";
 import NotFound from "./components/notFound/NotFound";
 
 import AuthContextProvider from "./contexts/AuthContextProvider";
@@ -29,6 +30,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/client" element={<Client />} />
         <Route path="/add-watch" element={<AddWatch />} />
+        <Route path="/watches/:watchId/edit" element={<EditWatch />} />
         <Route path="/info" element={<Info />} />
         <Route path="/watches/:watchId/details" element={<Details />} />
         <Route path="*" element={<NotFound />} />
