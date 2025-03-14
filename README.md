@@ -67,7 +67,7 @@ SoftUni React Project
  - [x] Create hook
  - [x] Form validation
 - [x] Delete watch
-- [ ] Edit watch
+- [x] Edit watch
 - [ ] Latest watches
 
 ## 8. Refactoring 

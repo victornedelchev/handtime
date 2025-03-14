@@ -10,9 +10,14 @@ function useForm(initialValues, submitCallback) {
     }));
   };
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    submitCallback(formValues);
+  const submitHandler = async (e) => {
+    try {
+      e.preventDefault();
+      submitCallback(formValues);
+      setFormValues(initialValues);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return {
