@@ -18,9 +18,14 @@ export default function Details() {
   const isOwner = userId === watch._ownerId;
 
   const watchDeleteHandler = async () => {
+    const isConfirmed = confirm(
+      `Are you sure you want to delete ${watch.brand} ${watch.model}?`
+    );
     try {
-      await watchesAPI.deleteWatch(watchId);
-      navigate("/");
+      if (isConfirmed) {
+        await watchesAPI.deleteWatch(watchId);
+        navigate("/products");
+      }
     } catch (error) {
       console.error(error);
     }

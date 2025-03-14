@@ -34,6 +34,7 @@ SoftUni React Project
 - [x] Details
 - [x] Details link
 - [x] Details route
+- [x] Show or hide Edit and Delete buttons
 - [x] API function
  - [x] Get one watch 
  - [x] Get all watches 
@@ -47,7 +48,7 @@ SoftUni React Project
   - [x] Login
   - [x] Register
   - [x] Logout
-- [ ]  Auth API hook
+- [x]  Auth API hook
  - [x] Login
  - [x] Register
  - [x] Logout  
@@ -58,7 +59,7 @@ SoftUni React Project
  - [x] Register
   - [x] Add form validation
 - [x] Logout
-- [ ] Authorized request
+- [x] Authorized request
 
  ## 7. UI implementation
 - [x] Dynamic navigation
@@ -67,7 +68,9 @@ SoftUni React Project
  - [x] Create hook
  - [x] Form validation
 - [x] Delete watch
+  - [x] Add confirmation for delete
 - [x] Edit watch
+  - [x] Add confirmation for delete
 - [ ] Latest watches
 
 ## 8. Refactoring 

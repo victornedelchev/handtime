@@ -54,10 +54,14 @@ export default function EditWatch() {
     } else if (values.summary.length > 1000) {
       return setError("Summary cannot exceed more than 1000 characters!");
     }
+    
+    const isConfirmed = confirm(`Are you sure you want to edit ${watch.brand} ${watch.model}?`);
 
     try {
-      await watchesAPI.editWatch(watchId, values);
-      navigate(`/watches/${watchId}/details`);
+      if (isConfirmed) {
+        await watchesAPI.editWatch(watchId, values);
+        navigate(`/watches/${watchId}/details`);
+      }
     } catch (error) {
       console.error(error);
     }
