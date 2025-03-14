@@ -1,8 +1,9 @@
+import { Link, useNavigate, useParams } from "react-router-dom";
+
 import watchesAPI from "../../api/watches-api";
 import { useOneWatch } from "../../hooks/useWatches";
 import "./details.css";
 
-import { useNavigate, useParams } from "react-router-dom";
 
 export default function Details() {
   const { watchId } = useParams();
@@ -46,7 +47,7 @@ export default function Details() {
                 {watch.summary}
               </div>
               <div className="details-actions">
-                <button className="btn-edit">Edit</button>
+                <Link to={`/watches/${watchId}/edit`} className="btn-edit">Edit</Link>
                 <button className="btn-delete" onClick={watchDeleteHandler}>
                   Delete
                 </button>
