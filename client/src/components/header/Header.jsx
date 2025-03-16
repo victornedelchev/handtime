@@ -53,7 +53,7 @@ export default function Header() {
               {isAuthenticated ? (
                 <>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/add-watch">
+                    <Link className="nav-link" to="/watches/add-watch">
                       Add Watch
                     </Link>
                   </li>
