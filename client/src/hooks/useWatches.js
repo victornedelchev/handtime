@@ -19,6 +19,22 @@ function useGetAllWatches() {
   return [watches, setWatches];
 }
 
+function useGetLatestWatches() {
+  const [watches, setWatches] = useState([]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const result = await watchAPI.getLatestWatches();
+        setWatches(result);
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  }, []);
+
+  return [watches, setWatches];
+}
+
 function useOneWatch(watchId) {
   const [watch, setWatch] = useState({});
 
@@ -44,4 +60,4 @@ function useCreateWatch() {
   return watchCreateHandler;
 }
 
-export { useGetAllWatches, useOneWatch, useCreateWatch };
+export { useGetAllWatches, useGetLatestWatches, useOneWatch, useCreateWatch };
