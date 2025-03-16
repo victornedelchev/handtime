@@ -71,7 +71,7 @@ SoftUni React Project
   - [x] Add confirmation for delete
 - [x] Edit watch
   - [x] Add confirmation for delete
-- [ ] Latest watches
+- [x] Latest watches
 
 ## 8. Refactoring 
  - [x] Extract auth state from App component

@@ -1,8 +1,17 @@
 import BASE_URL from "../constants/baseURL";
+import SORTING_STRING from "../constants/sortingString";
+
 import * as requester from "./requester";
 
 const getAllWatches = async () => {
   const result = await requester.get(`${BASE_URL}/watches`);
+  const watches = Object.values(result);
+
+  return watches;
+};
+
+const getLatestWatches = async () => {
+  const result = await requester.get(`${BASE_URL}/watches${SORTING_STRING}`);
   const watches = Object.values(result);
 
   return watches;
@@ -25,6 +34,7 @@ const editWatch = (watchId, watchData) =>
 
 const watchesAPI = {
   getAllWatches,
+  getLatestWatches,
   getOneWatch,
   createWatch,
   deleteWatch,
