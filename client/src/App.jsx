@@ -15,8 +15,8 @@ import AddWatch from "./components/addWatch/AddWatch";
 import EditWatch from "./components/editWatch/EditWatch";
 import NotFound from "./components/notFound/NotFound";
 import AuthContextProvider from "./contexts/AuthContextProvider";
-import GuestProtectedRoues from "./common/GuestProtectedRoutes";
-import UserProtectedRoues from "./common/GuestProtectedRoutes";
+import UserProtectedRoutes from "./common/UserProtectedRoutes";
+import GuestProtectedRoutes from "./common/GuestProtectedRoutes";
 
 function App() {
   return (
@@ -25,14 +25,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route element={<UserProtectedRoues />}>
+        <Route element={<UserProtectedRoutes />}>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Route>
         <Route path="/products" element={<Products />} />
         <Route path="/client" element={<Client />} />
-        <Route element={<GuestProtectedRoues />}>
-          <Route path="/add-watch" element={<AddWatch />} />
+        <Route element={<GuestProtectedRoutes />}>
+          <Route path="/watches/add-watch" element={<AddWatch />} />
           <Route path="/watches/:watchId/edit" element={<EditWatch />} />
           <Route path="/logout" element={<Logout />} />
         </Route>

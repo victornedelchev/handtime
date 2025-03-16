@@ -4,10 +4,11 @@ import { Navigate, Outlet } from "react-router-dom";
 
 import { AuthContext } from "../contexts/authContext";
 
-export default function UserProtectedRoues() {
+export default function GuestProtectedRoutes() {
   const { isAuthenticated } = useContext(AuthContext);
-  if (isAuthenticated) {
-    return <Navigate to="/" />;
+
+  if (!isAuthenticated) {
+    return <Navigate to="/login" />;
   }
 
   return <Outlet />;
