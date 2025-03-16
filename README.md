@@ -76,4 +76,6 @@ SoftUni React Project
 ## 8. Refactoring 
  - [x] Extract auth state from App component
  - [x] Persist auth state 
+ - [x] Show edit and delete buttons if you are owner
+ - [x] Add route guards
     
