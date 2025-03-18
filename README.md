@@ -73,7 +73,12 @@ SoftUni React Project
   - [x] Add confirmation for delete
 - [x] Latest watches
 
-## 8. Refactoring 
+## 8. Comments 
+-[x] Create service for comments
+-[x] Create comment
+
+
+## 9. Refactoring 
  - [x] Extract auth state from App component
  - [x] Persist auth state 
  - [x] Show edit and delete buttons if you are owner
