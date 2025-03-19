@@ -142,7 +142,7 @@ export default function Details() {
         <p>Loading comments...</p>
         <p className="error-message"></p>
 
-        {isAuthenticated && (
+        {(isAuthenticated && !isOwner) && (
           <div className="add-comment-section">
             <form onSubmit={submitHandler}>
               <textarea

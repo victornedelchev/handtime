@@ -77,7 +77,13 @@ SoftUni React Project
 
 ## 8. Comments
 
--[x] Create service for comments -[x] Post comment to the server -[x] Get comments from the server -[x] Add comments to the component -[x] Add form validation -[x] Show comment form only for authenticated user
+- [x] Create service for comments
+- [x] Post comment to the server
+- [x] Get comments from the server
+- [x] Add comments to the component 
+- [x] Add form validation
+- [x] Show comment form only for authenticated user
+- [x] Hide comment form for owner
 
 ## 9. Refactoring
 
