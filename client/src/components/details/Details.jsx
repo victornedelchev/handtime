@@ -120,29 +120,29 @@ export default function Details() {
           </div>
         </div>
       </section>
-      {comments.length > 0 ? (
-        <ul className="comment-list">
-          {comments.map((comment) => (
-            <li key={comment._id} className="comment-item">
-              <p className="comment-text">{comment.comment}</p>
-              <p className="comment-meta">
-                By: {comment.author.username} -{" "}
-                {dateFormatter(comment._createdOn)}
-              </p>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No comments yet.</p>
-      )}
-      {}
+
       <div className="comments-container">
         <h3>Comments</h3>
 
         <p>Loading comments...</p>
         <p className="error-message"></p>
+        {comments.length > 0 ? (
+          <ul className="comment-list">
+            {comments.map((comment) => (
+              <li key={comment._id} className="comment-item">
+                <p className="comment-text">{comment.comment}</p>
+                <p className="comment-meta">
+                  By: {comment.author.username} -{" "}
+                  {dateFormatter(comment._createdOn)}
+                </p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No comments yet.</p>
+        )}
 
-        {(isAuthenticated && !isOwner) && (
+        {isAuthenticated && !isOwner && (
           <div className="add-comment-section">
             <form onSubmit={submitHandler}>
               <textarea
