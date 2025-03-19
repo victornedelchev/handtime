@@ -6,23 +6,31 @@ import "./details.css";
 import { useAuthContext } from "../../hooks/useAuthConetxt";
 import { useState } from "react";
 import DeleteModal from "./deleteModal/DeleteModal";
-import { useCreateComment } from "../../hooks/useComments";
+import { useCreateComment, useGetAllComments } from "../../hooks/useComments";
 import useForm from "../../hooks/useForm";
+import dateFormatter from "../../utils/dateFormatter";
 
 export default function Details() {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const { watchId } = useParams();
   const navigate = useNavigate();
   const [watch] = useOneWatch(watchId);
-  const { userId } = useAuthContext();
+  const { userId, username } = useAuthContext();
   const createComment = useCreateComment();
+  const [comments, setComments] = useGetAllComments(watchId);
 
-  const initialValues = "";
+  const initialValues = {
+    comment: "",
+  };
 
   const newWatchComment = async (values) => {
     try {
-      const newComment = await createComment(watchId, values.comment);
-      console.log(values.commentues);
+      const newWatchComment = await createComment(watchId, values.comment);
+
+      setComments((prevComment) => [
+        ...prevComment,
+        { ...newWatchComment, author: { username } },
+      ]);
     } catch (error) {
       console.error(error);
     }
@@ -31,14 +39,6 @@ export default function Details() {
   const { formValues, changeHandler, submitHandler } = useForm(
     initialValues,
     newWatchComment
-    // async(values) => {
-    //   try {
-    //     const newComment = createComment(watchId, values.comment);
-    //     console.log(newComment);
-    //   } catch (error) {
-    //     console.error(error);
-    //   }
-    // }
   );
 
   if (!watch) {
@@ -109,6 +109,22 @@ export default function Details() {
           </div>
         </div>
       </section>
+      {comments.length > 0 ? (
+        <ul className="comment-list">
+          {comments.map((comment) => (
+            <li key={comment._id} className="comment-item">
+              <p className="comment-text">{comment.comment}</p>
+              <p className="comment-meta">
+                By: {comment.author.username} -{" "}
+                {dateFormatter(comment._createdOn)}
+              </p>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No comments yet.</p>
+      )}
+      {}
       <div className="comments-container">
         <h3>Comments</h3>
 
