@@ -38,6 +38,7 @@ SoftUni React Project
 - [x] API function
 - [x] Get one watch
 - [x] Get all watches
+ - [ ] Add loader 
 
 ## 5. API hooks
 
@@ -45,10 +46,10 @@ SoftUni React Project
 
 ## 6.Authentication
 
-- [ ] Auth API
-- [x] Login
-- [x] Register
-- [x] Logout
+- [x] Auth API
+  - [x] Login
+  - [x] Register
+  - [x] Logout
 - [x] Auth API hook
 - [x] Login
 - [x] Register
@@ -80,7 +81,7 @@ SoftUni React Project
 - [x] Create service for comments
 - [x] Post comment to the server
 - [x] Get comments from the server
-- [x] Add comments to the component 
+- [x] Add comments to the component
 - [x] Add form validation
 - [x] Show comment form only for authenticated user
 - [x] Hide comment form for owner
@@ -91,3 +92,4 @@ SoftUni React Project
 - [x] Persist auth state
 - [x] Show edit and delete buttons if you are owner
 - [x] Add route guards
+- [x] Add Loader component
