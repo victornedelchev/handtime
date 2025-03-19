@@ -75,7 +75,8 @@ SoftUni React Project
 
 ## 8. Comments 
 -[x] Create service for comments
--[x] Create comment
+-[x] Post comment to the server
+-[x] Read comment from the server
 
 
 ## 9. Refactoring 
