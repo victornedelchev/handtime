@@ -18,12 +18,19 @@ export default function Details() {
   const { userId, username } = useAuthContext();
   const createComment = useCreateComment();
   const [comments, setComments] = useGetAllComments(watchId);
+  const [error, setError] = useState("");
 
   const initialValues = {
     comment: "",
   };
 
   const newWatchComment = async (values) => {
+    if (!values.comment) {
+      return setError("Comment is required!");
+    } else if (values.comment.length < 3) {
+      return setError("Comment must be at least 3 characters long!");
+    }
+
     try {
       const newWatchComment = await createComment(watchId, values.comment);
 
@@ -140,6 +147,18 @@ export default function Details() {
               value={formValues.comment}
               onChange={changeHandler}
             />
+            {error && (
+              <p
+                style={{
+                  color: "red",
+                  padding: "5px",
+                  margin: "auto",
+                  textAlign: "center",
+                }}
+              >
+                <span>{error}</span>
+              </p>
+            )}
             <input
               className="add-comment-button"
               value="Add Comment"
