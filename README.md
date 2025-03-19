@@ -30,59 +30,58 @@ SoftUni React Project
 ## 4. Page implementation
 
 - [x] Watches list
- - [x] Add add persisted data in the server data folder
+- [x] Add add persisted data in the server data folder
 - [x] Details
 - [x] Details link
 - [x] Details route
 - [x] Show or hide Edit and Delete buttons
 - [x] API function
- - [x] Get one watch 
- - [x] Get all watches 
- 
+- [x] Get one watch
+- [x] Get all watches
 
 ## 5. API hooks
- - [x] Watches API hook
-  
+
+- [x] Watches API hook
+
 ## 6.Authentication
- - [ ] Auth API
-  - [x] Login
-  - [x] Register
-  - [x] Logout
-- [x]  Auth API hook
- - [x] Login
- - [x] Register
- - [x] Logout  
- - [x] Auth State & context
- - [x] Token management
- - [x] Login
-  - [x] Add form validation  
- - [x] Register
-  - [x] Add form validation
+
+- [ ] Auth API
+- [x] Login
+- [x] Register
+- [x] Logout
+- [x] Auth API hook
+- [x] Login
+- [x] Register
+- [x] Logout
+- [x] Auth State & context
+- [x] Token management
+- [x] Login
+- [x] Add form validation
+- [x] Register
+- [x] Add form validation
 - [x] Logout
 - [x] Authorized request
 
- ## 7. UI implementation
+## 7. UI implementation
+
 - [x] Dynamic navigation
 - [x] Create watch
- - [x] API function
- - [x] Create hook
- - [x] Form validation
+- [x] API function
+- [x] Create hook
+- [x] Form validation
 - [x] Delete watch
   - [x] Add confirmation for delete
 - [x] Edit watch
   - [x] Add confirmation for delete
 - [x] Latest watches
 
-## 8. Comments 
--[x] Create service for comments
--[x] Post comment to the server
--[x] Get comments from the server
--[x] Add comments to the component
+## 8. Comments
 
+-[x] Create service for comments -[x] Post comment to the server -[x] Get comments from the server -[x] Add comments to the component -[x] Add form validation -[x] Show comment form only for authenticated user
 
-## 9. Refactoring 
- - [x] Extract auth state from App component
- - [x] Persist auth state 
- - [x] Show edit and delete buttons if you are owner
- - [x] Add route guards
-    
+## 9. Refactoring
+
+- [x] Extract auth state from App component
+- [x] Persist auth state
+- [x] Show edit and delete buttons if you are owner
+- [x] Add route guards

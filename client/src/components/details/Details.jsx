@@ -1,12 +1,15 @@
+import { useContext, useState } from "react";
+
 import { Link, useNavigate, useParams } from "react-router-dom";
 
-import watchesAPI from "../../api/watches-api";
-import { useOneWatch } from "../../hooks/useWatches";
 import "./details.css";
-import { useAuthContext } from "../../hooks/useAuthConetxt";
-import { useState } from "react";
-import DeleteModal from "./deleteModal/DeleteModal";
+
+import { useOneWatch } from "../../hooks/useWatches";
+import { useAuthContext } from "../../hooks/useAuthContext";
 import { useCreateComment, useGetAllComments } from "../../hooks/useComments";
+import { AuthContext } from "../../contexts/authContext";
+import watchesAPI from "../../api/watches-api";
+import DeleteModal from "./deleteModal/DeleteModal";
 import useForm from "../../hooks/useForm";
 import dateFormatter from "../../utils/dateFormatter";
 
@@ -19,6 +22,7 @@ export default function Details() {
   const createComment = useCreateComment();
   const [comments, setComments] = useGetAllComments(watchId);
   const [error, setError] = useState("");
+  const { isAuthenticated } = useContext(AuthContext);
 
   const initialValues = {
     comment: "",
@@ -138,34 +142,36 @@ export default function Details() {
         <p>Loading comments...</p>
         <p className="error-message"></p>
 
-        <div className="add-comment-section">
-          <form onSubmit={submitHandler}>
-            <textarea
-              name="comment"
-              className="comment-textarea"
-              placeholder="Add a comment..."
-              value={formValues.comment}
-              onChange={changeHandler}
-            />
-            {error && (
-              <p
-                style={{
-                  color: "red",
-                  padding: "5px",
-                  margin: "auto",
-                  textAlign: "center",
-                }}
-              >
-                <span>{error}</span>
-              </p>
-            )}
-            <input
-              className="add-comment-button"
-              value="Add Comment"
-              type="submit"
-            />
-          </form>
-        </div>
+        {isAuthenticated && (
+          <div className="add-comment-section">
+            <form onSubmit={submitHandler}>
+              <textarea
+                name="comment"
+                className="comment-textarea"
+                placeholder="Add a comment..."
+                value={formValues.comment}
+                onChange={changeHandler}
+              />
+              {error && (
+                <p
+                  style={{
+                    color: "red",
+                    padding: "5px",
+                    margin: "auto",
+                    textAlign: "center",
+                  }}
+                >
+                  <span>{error}</span>
+                </p>
+              )}
+              <input
+                className="add-comment-button"
+                value="Add Comment"
+                type="submit"
+              />
+            </form>
+          </div>
+        )}
       </div>
     </>
   );
