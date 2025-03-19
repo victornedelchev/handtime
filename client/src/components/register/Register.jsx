@@ -25,7 +25,7 @@ export default function Register() {
     if (!values.username) {
       return setError("Username is required!");
     } else if (values.username.length < 3) {
-      return setError("Username must be more than 2 characters!")
+      return setError("Username must be at least 3 characters long!")
     } else if (values.username.length > 15) {
       return setError("Username cannot exceed more than 15 characters!")
     }
@@ -39,7 +39,7 @@ export default function Register() {
     if (!values.password) {
       return setError("Password is required!");
     } else if (values.password.length < 4) {
-      return setError("Password must be more than 4 characters!")
+      return setError("Password must be at least 4 characters long!")
     } else if (values.password.length > 15) {
       return setError("Password cannot exceed more than 15 characters!")
     }
@@ -47,7 +47,7 @@ export default function Register() {
     if (!values.rePassword) {
       return setError("Confirm Password is required!");
     } else if (values.rePassword.length < 4) {
-      return setError("Confirm password must be more than 4 characters!")
+      return setError("Confirm password must be at least 4 characters long!")
     } else if (values.rePassword.length > 15) {
       return setError("Confirm password exceed more than 15 characters!")
     }

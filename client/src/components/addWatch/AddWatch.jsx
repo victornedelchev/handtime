@@ -15,7 +15,7 @@ export default function AddWatch() {
     if (!values.brand) {
       return setError("Brand is required!");
     } else if (values.brand.length < 3) {
-      return setError("Brand must be more than 2 characters!");
+      return setError("Brand must be at least 3 characters long!");
     } else if (values.brand.length > 30) {
       return setError("Brand cannot exceed more than 15 characters!");
     }
@@ -23,7 +23,7 @@ export default function AddWatch() {
     if (!values.model) {
       return setError("Model is required!");
     } else if (values.model.length < 3) {
-      return setError("Model must be more than 2 characters!");
+      return setError("Model must be at least 3 characters long!");
     } else if (values.model.length > 60) {
       return setError("Model cannot exceed more than 60 characters!");
     }
@@ -41,7 +41,7 @@ export default function AddWatch() {
     if (!values.summary) {
       return setError("Summary is required!");
     } else if (values.summary.length < 10) {
-      return setError("Summary must be more than 10 characters!");
+      return setError("Summary must be at least 10 characters long!");
     } else if (values.summary.length > 1000) {
       return setError("Summary cannot exceed more than 1000 characters!");
     }
