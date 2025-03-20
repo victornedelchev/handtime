@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { AuthContext } from "../../contexts/authContext";
+import DigitalClock from "../digitalClock/DigitalClock";
 
 export default function Header() {
   const { username, isAuthenticated } = useContext(AuthContext);
@@ -14,6 +15,8 @@ export default function Header() {
           <Link className="navbar-brand" to="/">
             <span>HandTime</span>
           </Link>
+
+          <DigitalClock />
 
           <button
             className="navbar-toggler"

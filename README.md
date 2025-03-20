@@ -38,7 +38,7 @@ SoftUni React Project
 - [x] API function
 - [x] Get one watch
 - [x] Get all watches
- - [ ] Add loader 
+ - [x] Add loader
 
 ## 5. API hooks
 
@@ -93,3 +93,4 @@ SoftUni React Project
 - [x] Show edit and delete buttons if you are owner
 - [x] Add route guards
 - [x] Add Loader component
+- [x] Add digital clock in the header
