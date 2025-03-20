@@ -94,3 +94,4 @@ SoftUni React Project
 - [x] Add route guards
 - [x] Add Loader component
 - [x] Add digital clock in the header
+- [x] Add world clock

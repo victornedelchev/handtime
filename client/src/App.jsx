@@ -17,6 +17,7 @@ import NotFound from "./components/notFound/NotFound";
 import AuthContextProvider from "./contexts/AuthContextProvider";
 import UserProtectedRoutes from "./common/UserProtectedRoutes";
 import GuestProtectedRoutes from "./common/GuestProtectedRoutes";
+import WorldClock from "./components/worldClock/WorldClock";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/world-clock" element={<WorldClock />} />
         <Route path="/about" element={<About />} />
         <Route element={<UserProtectedRoutes />}>
           <Route path="/login" element={<Login />} />

@@ -38,6 +38,11 @@ export default function Header() {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/world-clock">
+                  World Clock
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/products">
                   Products
                 </Link>
