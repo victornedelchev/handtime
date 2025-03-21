@@ -37,7 +37,10 @@ export default function WorldClock() {
     updateTimes();
 
     const interval = setInterval(updateTimes, 1000);
-    return () => clearInterval(interval);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   return (

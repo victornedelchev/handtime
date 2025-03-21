@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { FaUser, FaLock } from "react-icons/fa";
+import { LuEye, LuEyeClosed } from "react-icons/lu";
 
 import "./Login.css";
 import { useLogin } from "../../hooks/useAuth";
@@ -16,6 +17,7 @@ const initialValues = {
 
 export default function Login() {
   const [error, setError] = useState("");
+  const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
 
   const login = useLogin();
@@ -30,9 +32,9 @@ export default function Login() {
     if (!password) {
       return setError("Password is required!");
     } else if (password.length < 4) {
-      return setError("Password must be at least 4 characters long!")
+      return setError("Password must be at least 4 characters long!");
     } else if (password.length > 10) {
-      return setError("Password cannot exceed more than 15 characters!")
+      return setError("Password cannot exceed more than 15 characters!");
     }
 
     try {
@@ -47,6 +49,10 @@ export default function Login() {
     initialValues,
     loginHandler
   );
+
+  const togglePasswordVisibility = () => {
+    setIsVisible((isVisible) => !isVisible);
+  };
 
   return (
     <div className="wrapper">
@@ -65,13 +71,20 @@ export default function Login() {
           </div>
           <div className="input-box">
             <input
-              type="password"
+              type={isVisible ? "text" : "password"}
               name="password"
               placeholder="Password"
               value={formValues.password}
               onChange={changeHandler}
             />
-            <FaLock className="icon" />
+            {isVisible ? (
+              <LuEye className="icon" onClick={togglePasswordVisibility} />
+            ) : (
+              <LuEyeClosed
+                className="icon"
+                onClick={togglePasswordVisibility}
+              />
+            )}
           </div>
           {error && (
             <p
