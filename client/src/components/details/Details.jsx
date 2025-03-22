@@ -33,6 +33,8 @@ export default function Details() {
       return setError("Comment is required!");
     } else if (values.comment.length < 3) {
       return setError("Comment must be at least 3 characters long!");
+    } else if (values.comment.length > 300) {
+      return setError("Comment must be less than 300 characters long!");
     }
 
     try {
