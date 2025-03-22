@@ -95,4 +95,5 @@ SoftUni React Project
 - [x] Add Loader component
 - [x] Add digital clock in the header
 - [x] Add world clock
-- [x] Add functionality to show and hide the password for login
+- [x] Add functionality to show and hide the password for login and register
+- [x] Add Weather component

@@ -3,8 +3,10 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { FaUser, FaLock, FaEnvelope } from "react-icons/fa";
+import { LuEye, LuEyeClosed } from "react-icons/lu";
 
 import "./Register.css";
+
 import { useRegister } from "../../hooks/useAuth";
 import useForm from "../../hooks/useForm";
 import { isValidEmail } from "../../utils/validation";
@@ -13,6 +15,8 @@ const initialValues = { username: "", email: "", password: "", rePassword: "" };
 
 export default function Register() {
   const [error, setError] = useState("");
+  const [isVisiblePassword, setIsVisiblePassword] = useState(false);
+  const [isVisibleRePassword, setIsVisibleRePassword] = useState(false);
   const navigate = useNavigate();
 
   const register = useRegister();
@@ -25,33 +29,33 @@ export default function Register() {
     if (!values.username) {
       return setError("Username is required!");
     } else if (values.username.length < 3) {
-      return setError("Username must be at least 3 characters long!")
+      return setError("Username must be at least 3 characters long!");
     } else if (values.username.length > 15) {
-      return setError("Username cannot exceed more than 15 characters!")
+      return setError("Username cannot exceed more than 15 characters!");
     }
 
     if (!values.email) {
       return setError("Email is required!");
     } else if (!isValidEmail(values.email)) {
       return setError("This is not valid email format!");
-    } 
+    }
 
     if (!values.password) {
       return setError("Password is required!");
     } else if (values.password.length < 4) {
-      return setError("Password must be at least 4 characters long!")
+      return setError("Password must be at least 4 characters long!");
     } else if (values.password.length > 15) {
-      return setError("Password cannot exceed more than 15 characters!")
+      return setError("Password cannot exceed more than 15 characters!");
     }
 
     if (!values.rePassword) {
       return setError("Confirm Password is required!");
     } else if (values.rePassword.length < 4) {
-      return setError("Confirm password must be at least 4 characters long!")
+      return setError("Confirm password must be at least 4 characters long!");
     } else if (values.rePassword.length > 15) {
-      return setError("Confirm password exceed more than 15 characters!")
+      return setError("Confirm password exceed more than 15 characters!");
     }
-    
+
     try {
       await register(
         values.username,
@@ -69,6 +73,14 @@ export default function Register() {
     initialValues,
     registerHandler
   );
+
+  const togglePasswordVisibility = () => {
+    setIsVisiblePassword((isVisible) => !isVisible);
+  };
+
+  const toggleRePasswordVisibility = () => {
+    setIsVisibleRePassword((isVisible) => !isVisible);
+  };
 
   return (
     <div className="wrapper">
@@ -97,23 +109,37 @@ export default function Register() {
           </div>
           <div className="input-box">
             <input
-              type="password"
+              type={isVisiblePassword ? "text" : "password"}
               placeholder="Password"
               name="password"
               value={formValues.password}
               onChange={changeHandler}
             />
-            <FaLock className="icon" />
+            {isVisiblePassword ? (
+              <LuEye className="icon" onClick={togglePasswordVisibility} />
+            ) : (
+              <LuEyeClosed
+                className="icon"
+                onClick={togglePasswordVisibility}
+              />
+            )}
           </div>
           <div className="input-box">
             <input
-              type="password"
+              type={isVisibleRePassword ? "text" : "password"}
               placeholder="Confirm password"
               name="rePassword"
               value={formValues.rePassword}
               onChange={changeHandler}
             />
-            <FaLock className="icon" />
+            {isVisibleRePassword ? (
+              <LuEye className="icon" onClick={toggleRePasswordVisibility} />
+            ) : (
+              <LuEyeClosed
+                className="icon"
+                onClick={toggleRePasswordVisibility}
+              />
+            )}
           </div>
           {error && (
             <p

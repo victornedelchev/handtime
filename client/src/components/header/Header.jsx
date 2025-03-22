@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import { AuthContext } from "../../contexts/authContext";
 import DigitalClock from "../digitalClock/DigitalClock";
+import Weather from "../weather/Weather";
 
 export default function Header() {
   const { username, isAuthenticated } = useContext(AuthContext);
@@ -17,6 +18,8 @@ export default function Header() {
           </Link>
 
           <DigitalClock />
+          
+          <Weather />
 
           <button
             className="navbar-toggler"
@@ -32,11 +35,11 @@ export default function Header() {
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav  ">
-              <li className="nav-item active">
+              {/* <li className="nav-item active">
                 <Link className="nav-link" to="/">
                   Home <span className="sr-only">(current)</span>
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <Link className="nav-link" to="/world-clock">
                   World Clock
