@@ -243,6 +243,12 @@ a:focus {
   color: #8019c8;
 }
 
+.temperature-container img {
+  width: 35px;
+  height: 35px;
+  margin-left: 5px;
+}
+
 /*end header section*/
 /* slider section */
 .slider_section {
