@@ -653,6 +653,19 @@ a:focus {
   background-color: #541184;
 }
 
+.product_section .product_container .no-watches {
+  padding: 20px;
+  border: 5px solid red;
+  border-radius: 10px;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 45px;
+  text-transform: uppercase;
+  font-size: 3em;
+  box-shadow: #414845 0px 0px 15px;
+}
+
 .client_section .box {
   display: -webkit-box;
   display: -ms-flexbox;
