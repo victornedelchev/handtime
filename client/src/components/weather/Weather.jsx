@@ -2,49 +2,47 @@ import { useEffect, useState } from "react";
 
 import "./Weather.css";
 
-import clear_icon from "../../assets/clear.png";
-import cloud_icon from "../../assets/cloud.png";
-import drizzle_icon from "../../assets/drizzle.png";
-import humidity_icon from "../../assets/humidity.png";
-import rain_icon from "../../assets/rain.png";
-import snow_icon from "../../assets/snow.png";
-import wind_icon from "../../assets/wind.png";
+import clear_icon_day from "../../assets/clear.png";
+import clear_icon_night from "../../assets/moon.png";
+import cloud_icon_day from "../../assets/cloud.png";
+import cloud_icon_night from "../../assets/partly-cloudy-night.png";
+import drizzle_icon_day from "../../assets/drizzle.png";
+import drizzle_icon_night from "../../assets/night-drizzle.png";
+import rain_icon_day from "../../assets/rain.png";
+import rain_icon_night from "../../assets/night-raining.png";
+import snow_icon_day from "../../assets/snow.png";
+import snow_icon_night from "../../assets/night-snow.png";
+import * as requester from "../../api/requester";
+import WEATHER_URL from "../../constants/weatherURL";
 
 export default function Weather() {
   const [weatherData, setWeatherData] = useState(false);
 
   const icons = {
-    "01d": clear_icon,
-    "01n": clear_icon,
-    "02d": cloud_icon,
-    "02n": cloud_icon,
-    "03d": cloud_icon,
-    "03n": cloud_icon,
-    "04d": drizzle_icon,
-    "04n": drizzle_icon,
-    "09d": rain_icon,
-    "09n": rain_icon,
-    "10d": rain_icon,
-    "10n": rain_icon,
-    "13d": snow_icon,
-    "13n": snow_icon,
+    "01d": clear_icon_day,
+    "01n": clear_icon_night,
+    "02d": cloud_icon_day,
+    "02n": cloud_icon_night,
+    "03d": cloud_icon_day,
+    "03n": cloud_icon_night,
+    "04d": drizzle_icon_day,
+    "04n": drizzle_icon_night,
+    "09d": rain_icon_day,
+    "09n": rain_icon_night,
+    "10d": rain_icon_day,
+    "10n": rain_icon_night,
+    "13d": snow_icon_day,
+    "13n": snow_icon_night,
   };
 
-  const getWeather = async (city) => {
+  const getWeather = async () => {
     try {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${
-        import.meta.env.VITE_APP_ID
-      }`;
-      const response = await fetch(url);
-      const data = await response.json();
+      const result = await requester.get(WEATHER_URL);
 
-      const icon = data.weather[0].icon || clear_icon;
+      const icon = icons[result.weather[0].icon] || clear_icon_day;
 
       setWeatherData({
-        humidity: data.main.humidity,
-        winSpeed: data.wind.speed,
-        temperature: Math.floor(data.main.temp),
-        location: data.name,
+        temperature: Math.floor(result.main.temp),
         icon: icon,
       });
     } catch (error) {
@@ -54,20 +52,24 @@ export default function Weather() {
   };
 
   useEffect(() => {
-    getWeather("Sofia");
+    getWeather();
   }, []);
 
   return (
-    <div>
+    <div className="temperature-container">
       <span
         className="temperature"
         style={
           weatherData.temperature <= 15 ? { color: "blue" } : { color: "red" }
         }
       >
-        {weatherData.temperature}°c
+        {!weatherData.temperature ? "--" : weatherData.temperature}°c
       </span>
-      <img src={weatherData.icon} alt="" className="weather-icon" />
+      <img
+        src={!weatherData.icon ? "" : weatherData.icon}
+        alt="weather-icon"
+        className="weather-icon"
+      />
     </div>
   );
 }

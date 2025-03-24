@@ -26,6 +26,7 @@ SoftUni React Project
 - [x] Service layer architecture
 - [x] Abstract requester
 - [x] Add watches API
+- [X] Add weather API
 
 ## 4. Page implementation
 
