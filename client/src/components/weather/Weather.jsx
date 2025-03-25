@@ -25,8 +25,8 @@ export default function Weather() {
     "02n": cloud_icon_night,
     "03d": cloud_icon_day,
     "03n": cloud_icon_night,
-    "04d": drizzle_icon_day,
-    "04n": drizzle_icon_night,
+    "04d": cloud_icon_day,
+    "04n": cloud_icon_night,
     "09d": rain_icon_day,
     "09n": rain_icon_night,
     "10d": rain_icon_day,
@@ -38,11 +38,13 @@ export default function Weather() {
   const getWeather = async () => {
     try {
       const result = await requester.get(WEATHER_URL);
+      console.log(result);
 
       const icon = icons[result.weather[0].icon] || clear_icon_day;
 
       setWeatherData({
         temperature: Math.floor(result.main.temp),
+        location: result.name,
         icon: icon,
       });
     } catch (error) {
@@ -63,6 +65,7 @@ export default function Weather() {
           weatherData.temperature <= 15 ? { color: "blue" } : { color: "red" }
         }
       >
+        {!weatherData.location ? "--" : weatherData.location} {" "}
         {!weatherData.temperature ? "--" : weatherData.temperature}°c
       </span>
       <img

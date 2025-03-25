@@ -76,6 +76,8 @@ SoftUni React Project
 - [x] Edit watch
   - [x] Add confirmation for delete
 - [x] Latest watches
+- [x] Add world clock
+- [x] Add Google maps location 
 
 ## 8. Comments
 
@@ -95,6 +97,6 @@ SoftUni React Project
 - [x] Add route guards
 - [x] Add Loader component
 - [x] Add digital clock in the header
-- [x] Add world clock
 - [x] Add functionality to show and hide the password for login and register
 - [x] Add Weather component
+
