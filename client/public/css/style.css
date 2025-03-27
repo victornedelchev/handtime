@@ -135,6 +135,12 @@ a:focus {
   background-color: #8019c8;
 }
 
+.custom_nav-container .navbar-nav .nav-item:hover .nav-link,
+.custom_nav-container .navbar-nav .nav-item .nav-link.active {
+  color: #ffffff;
+  background-color: #8019c8;
+}
+
 .custom_nav-container .nav_search-btn {
   width: 35px;
   height: 35px;

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import { AuthContext } from "../../contexts/authContext";
 import DigitalClock from "../digitalClock/DigitalClock";
@@ -8,6 +8,10 @@ import Weather from "../weather/Weather";
 
 export default function Header() {
   const { username, isAuthenticated } = useContext(AuthContext);
+
+  const linkClass = ({ isActive }) => {
+    return isActive ? "nav-link active" : "nav-link";
+  };
 
   return (
     <header className="header_section">
@@ -18,7 +22,7 @@ export default function Header() {
           </Link>
 
           <DigitalClock />
-          
+
           <Weather />
 
           <button
@@ -35,44 +39,39 @@ export default function Header() {
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav  ">
-              {/* <li className="nav-item active">
-                <Link className="nav-link" to="/">
-                  Home <span className="sr-only">(current)</span>
-                </Link>
-              </li> */}
               <li className="nav-item">
-                <Link className="nav-link" to="/world-clock">
+                <NavLink className={linkClass} to="/world-clock">
                   World Clock
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/products">
+                <NavLink className={linkClass} to="/products">
                   Products
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/client">
+                <NavLink className={linkClass} to="/client">
                   Testimonial
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/about">
+                <NavLink className={linkClass} to="/about">
                   {" "}
                   About
-                </Link>
+                </NavLink>
               </li>
               {isAuthenticated ? (
                 <>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/watches/add-watch">
+                    <NavLink className={linkClass} to="/watches/add-watch">
                       Add Watch
-                    </Link>
+                    </NavLink>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/logout">
+                    <NavLink className={linkClass} to="/logout">
                       {" "}
                       Logout
-                    </Link>
+                    </NavLink>
                   </li>
                   <li style={{ color: "#8019c8", fontWeight: "bold" }}>
                     WELCOME {username.toUpperCase()}
@@ -81,16 +80,16 @@ export default function Header() {
               ) : (
                 <>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/login">
+                    <NavLink className={linkClass} to="/login">
                       {" "}
                       Login
-                    </Link>
+                    </NavLink>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/register">
+                    <NavLink className={linkClass} to="/register">
                       {" "}
                       Register
-                    </Link>
+                    </NavLink>
                   </li>
                   <li style={{ color: "#8019c8" }}>WELCOME GUESTS</li>
                 </>
