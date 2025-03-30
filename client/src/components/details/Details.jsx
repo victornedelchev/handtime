@@ -104,7 +104,7 @@ export default function Details() {
                   <h3>Specifications</h3>
                   {watch.summary}
                 </div>
-                {isOwner && (
+                {(isAuthenticated && isOwner) && (
                   <div className="details-actions">
                     <Link to={`/watches/${watchId}/edit`} className="btn-edit">
                       Edit
@@ -144,7 +144,7 @@ export default function Details() {
           <p>No comments yet.</p>
         )}
 
-        {isAuthenticated && !isOwner && (
+        {(isAuthenticated && !isOwner) && (
           <div className="add-comment-section">
             <form onSubmit={submitHandler}>
               <textarea

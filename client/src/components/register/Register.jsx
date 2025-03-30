@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 
-import { FaUser, FaLock, FaEnvelope } from "react-icons/fa";
+import { FaUser, FaEnvelope } from "react-icons/fa";
 import { LuEye, LuEyeClosed } from "react-icons/lu";
 
 import "./Register.css";
