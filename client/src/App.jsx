@@ -18,6 +18,7 @@ import AuthContextProvider from "./contexts/AuthContextProvider";
 import UserProtectedRoutes from "./common/UserProtectedRoutes";
 import GuestProtectedRoutes from "./common/GuestProtectedRoutes";
 import WorldClock from "./components/worldClock/WorldClock";
+import UserProfile from "./components/userProfile/userProfile";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/watches/add-watch" element={<AddWatch />} />
           <Route path="/watches/:watchId/edit" element={<EditWatch />} />
           <Route path="/logout" element={<Logout />} />
+          <Route path="/user-profile" element={<UserProfile />} />
         </Route>
         <Route path="/info" element={<Info />} />
         <Route path="/watches/:watchId/details" element={<Details />} />

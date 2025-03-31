@@ -73,6 +73,12 @@ export default function Header() {
                       Logout
                     </NavLink>
                   </li>
+                  <li className="nav-item">
+                    <NavLink className={linkClass} to="/user-profile">
+                      {" "}
+                      Profile
+                    </NavLink>
+                  </li>
                   <li style={{ color: "#8019c8", fontWeight: "bold" }}>
                     WELCOME {username.toUpperCase()}
                   </li>
