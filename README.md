@@ -26,7 +26,7 @@ SoftUni React Project
 - [x] Service layer architecture
 - [x] Abstract requester
 - [x] Add watches API
-- [X] Add weather API
+- [x] Add weather API
 
 ## 4. Page implementation
 
@@ -39,7 +39,8 @@ SoftUni React Project
 - [x] API function
 - [x] Get one watch
 - [x] Get all watches
- - [x] Add loader
+- [x] Add loader
+- [x] Get profile
 
 ## 5. API hooks
 
@@ -51,10 +52,12 @@ SoftUni React Project
   - [x] Login
   - [x] Register
   - [x] Logout
+  - [x] Profile
 - [x] Auth API hook
-- [x] Login
-- [x] Register
-- [x] Logout
+  - [x] Login
+  - [x] Register
+  - [x] Logout
+  - [x] Profile
 - [x] Auth State & context
 - [x] Token management
 - [x] Login
@@ -77,7 +80,7 @@ SoftUni React Project
   - [x] Add confirmation for delete
 - [x] Latest watches
 - [x] Add world clock
-- [x] Add Google maps location 
+- [x] Add Google maps location
 
 ## 8. Comments
 
@@ -94,9 +97,9 @@ SoftUni React Project
 - [x] Extract auth state from App component
 - [x] Persist auth state
 - [x] Show edit and delete buttons if you are owner
+- [x] Hide edit and delete buttons if you ate guest
 - [x] Add route guards
 - [x] Add Loader component
 - [x] Add digital clock in the header
 - [x] Add functionality to show and hide the password for login and register
 - [x] Add Weather component
-
