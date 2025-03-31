@@ -12,3 +12,7 @@ export const register = (username, email, password) =>
   });
 
 export const logout = () => requester.get(`${API_URL}/logout`);
+
+export const getUser = () => requester.get(`${API_URL}/me`);
+
+
