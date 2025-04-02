@@ -103,3 +103,4 @@ SoftUni React Project
 - [x] Add digital clock in the header
 - [x] Add functionality to show and hide the password for login and register
 - [x] Add Weather component
+- [x] Add functionality for user-added watches

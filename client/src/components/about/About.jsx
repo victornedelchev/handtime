@@ -1,6 +1,9 @@
+import { useState } from "react";
 import Location from "../location/Location";
 
 export default function About() {
+  const [readMore, setReadMore] = useState(false);
+  const toggleReadMore = () => setReadMore(!readMore);
   return (
     <>
       <section className="about_section layout_padding">
@@ -18,12 +21,25 @@ export default function About() {
             </div>
             <div className="col-md-6">
               <div className="detail-box">
-                <h2>About Our Shop</h2>
-                <p>
-                  There are many variations of passages of Lorem Ipsum There are
-                  many variations of passages of Lorem Ipsum
-                </p>
-                <a href="">Read More</a>
+                <h2>About This App</h2>
+                {readMore ? (
+                  <p>
+                    This is an application for lovers and admirers of
+                    wristwatches. Here you can browse watches added by other
+                    users, as well as add comments about them. After
+                    registering, you have the opportunity to add an unlimited
+                    number of watches that you like.
+                  </p>
+                ) : (
+                  <p>
+                    This is an application for lovers and admirers of
+                    wristwatches. Here you can browse watches added by other
+                    users, as well as add comments...
+                  </p>
+                )}
+                <button onClick={toggleReadMore}>
+                  {readMore ? "Read Less" : "Read More"}
+                </button>
               </div>
             </div>
           </div>

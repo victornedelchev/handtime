@@ -530,6 +530,22 @@ a:focus {
   background-color: #541184;
 }
 
+.about_section .detail-box button {
+  display: inline-block;
+  padding: 8px 35px;
+  background-color: #8019c8;
+  color: #ffffff;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: none;
+  margin-top: 35px;
+}
+
+.about_section .detail-box button:hover {
+  background-color: #541184;
+}
+
 .product_section {
   background-color: #f5f5f5;
   margin-bottom: 45px;
