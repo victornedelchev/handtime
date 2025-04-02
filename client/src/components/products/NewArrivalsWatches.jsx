@@ -10,7 +10,7 @@ export default function NewArrivalsWatches() {
   useEffect(() => {
     const interval = setInterval(() => {
       setLoading(false);
-    }, 3000);
+    }, 600);
 
     return () => {
       clearInterval(interval);

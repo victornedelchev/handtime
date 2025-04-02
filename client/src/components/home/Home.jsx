@@ -26,9 +26,9 @@ export default function Home() {
                           voluptatem a itaque suscipit.
                         </p>
                         <div className="btn-box">
-                          <a href="" className="btn1">
-                            Contact Us
-                          </a>
+                          <Link to="/world-clock" className="btn1">
+                            World Clock
+                          </Link>
                           <Link to="/about" className="btn2">
                             About Us
                           </Link>
@@ -50,12 +50,12 @@ export default function Home() {
                           voluptatem a itaque suscipit.
                         </p>
                         <div className="btn-box">
-                          <a href="" className="btn1">
-                            Contact Us
-                          </a>
-                          <a href="" className="btn2">
+                          <Link to="/products" className="btn1">
+                            Products
+                          </Link>
+                          <Link to="/about" className="btn2">
                             About Us
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>

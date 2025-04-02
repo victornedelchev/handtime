@@ -104,3 +104,4 @@ SoftUni React Project
 - [x] Add functionality to show and hide the password for login and register
 - [x] Add Weather component
 - [x] Add functionality for user-added watches
+- [x] Add search functionality for watches
