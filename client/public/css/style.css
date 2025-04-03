@@ -822,6 +822,19 @@ a:focus {
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);
 }
 
+.contact_section .form_container textarea {
+  width: 100%;
+  border: none;
+  height: 50px;
+  resize: none;
+  margin-bottom: 25px;
+  padding-left: 15px;
+  outline: none;
+  color: #101010;
+  -webkit-box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);
+}
+
 .contact_section .form_container input::-webkit-input-placeholder {
   color: #444;
 }
@@ -839,6 +852,10 @@ a:focus {
 }
 
 .contact_section .form_container input.message-box {
+  height: 120px;
+}
+
+.contact_section .form_container textarea.message-box {
   height: 120px;
 }
 

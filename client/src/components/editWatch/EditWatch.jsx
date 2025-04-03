@@ -54,7 +54,9 @@ export default function EditWatch() {
     } else if (values.summary.length > 1000) {
       return setError("Summary cannot exceed more than 1000 characters!");
     }
-    const isConfirmed = confirm(`Are you sure you want to edit ${watch.brand} ${watch.model}?`);
+    const isConfirmed = confirm(
+      `Are you sure you want to edit ${watch.brand} ${watch.model}?`
+    );
 
     try {
       if (isConfirmed) {
@@ -119,14 +121,14 @@ export default function EditWatch() {
                   />
                 </div>
                 <div>
-                  <input
+                  <textarea
                     type="text"
                     name="summary"
                     className="message-box"
                     placeholder="Summary"
                     value={formValues.summary}
                     onChange={changeHandler}
-                  />
+                  ></textarea>
                 </div>
                 {error && (
                   <p

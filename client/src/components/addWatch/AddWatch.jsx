@@ -115,14 +115,14 @@ export default function AddWatch() {
                   />
                 </div>
                 <div>
-                  <input
+                  <textarea
                     type="text"
                     name="summary"
                     className="message-box"
                     placeholder="Summary"
                     value={formValues.summary}
                     onChange={changeHandler}
-                  />
+                  ></textarea>
                 </div>
                 {error && (
                   <p
