@@ -1,7 +1,9 @@
 .world-clock-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  min-height: 100vh;
   font-family: "Arial", sans-serif;
   color: #333;
   background-color: #f4f4f9;
@@ -36,11 +38,10 @@
 }
 
 .city-card:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s;
-    background-color: #c4abd9;
-  }
-  
+  transform: scale(1.05);
+  transition: transform 0.3s;
+  background-color: #c4abd9;
+}
 
 .city-name {
   font-size: 24px;
@@ -51,7 +52,7 @@
 
 .city-name:hover {
   color: #fff;
-} 
+}
 
 .city-time {
   font-size: 24px;
@@ -62,4 +63,3 @@
 .city-time:hover {
   color: #fff;
 }
-

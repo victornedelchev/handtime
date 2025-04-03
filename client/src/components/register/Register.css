@@ -1,3 +1,11 @@
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f9;
+}
+
 .wrapper {
   position: relative;
   width: 420px;

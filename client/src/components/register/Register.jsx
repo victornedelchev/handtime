@@ -83,84 +83,86 @@ export default function Register() {
   };
 
   return (
-    <div className="wrapper">
-      <div className="form-box register">
-        <form onSubmit={submitHandler}>
-          <h1>Registration</h1>
-          <div className="input-box">
-            <input
-              type="text"
-              name="username"
-              placeholder="Username"
-              value={formValues.username}
-              onChange={changeHandler}
-            />
-            <FaUser className="icon" />
-          </div>
-          <div className="input-box">
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={formValues.email}
-              onChange={changeHandler}
-            />
-            <FaEnvelope className="icon" />
-          </div>
-          <div className="input-box">
-            <input
-              type={isVisiblePassword ? "text" : "password"}
-              placeholder="Password"
-              name="password"
-              value={formValues.password}
-              onChange={changeHandler}
-            />
-            {isVisiblePassword ? (
-              <LuEye className="icon" onClick={togglePasswordVisibility} />
-            ) : (
-              <LuEyeClosed
-                className="icon"
-                onClick={togglePasswordVisibility}
+    <div className="register-container">
+      <div className="wrapper">
+        <div className="form-box register">
+          <form onSubmit={submitHandler}>
+            <h1>Registration</h1>
+            <div className="input-box">
+              <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                value={formValues.username}
+                onChange={changeHandler}
               />
-            )}
-          </div>
-          <div className="input-box">
-            <input
-              type={isVisibleRePassword ? "text" : "password"}
-              placeholder="Confirm password"
-              name="rePassword"
-              value={formValues.rePassword}
-              onChange={changeHandler}
-            />
-            {isVisibleRePassword ? (
-              <LuEye className="icon" onClick={toggleRePasswordVisibility} />
-            ) : (
-              <LuEyeClosed
-                className="icon"
-                onClick={toggleRePasswordVisibility}
+              <FaUser className="icon" />
+            </div>
+            <div className="input-box">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formValues.email}
+                onChange={changeHandler}
               />
+              <FaEnvelope className="icon" />
+            </div>
+            <div className="input-box">
+              <input
+                type={isVisiblePassword ? "text" : "password"}
+                placeholder="Password"
+                name="password"
+                value={formValues.password}
+                onChange={changeHandler}
+              />
+              {isVisiblePassword ? (
+                <LuEye className="icon" onClick={togglePasswordVisibility} />
+              ) : (
+                <LuEyeClosed
+                  className="icon"
+                  onClick={togglePasswordVisibility}
+                />
+              )}
+            </div>
+            <div className="input-box">
+              <input
+                type={isVisibleRePassword ? "text" : "password"}
+                placeholder="Confirm password"
+                name="rePassword"
+                value={formValues.rePassword}
+                onChange={changeHandler}
+              />
+              {isVisibleRePassword ? (
+                <LuEye className="icon" onClick={toggleRePasswordVisibility} />
+              ) : (
+                <LuEyeClosed
+                  className="icon"
+                  onClick={toggleRePasswordVisibility}
+                />
+              )}
+            </div>
+            {error && (
+              <p
+                style={{
+                  color: "red",
+                  paddingBottom: "30px",
+                  margin: "auto",
+                  textAlign: "center",
+                  fontWeight: "bold",
+                }}
+              >
+                <span>{error}</span>
+              </p>
             )}
-          </div>
-          {error && (
-            <p
-              style={{
-                color: "red",
-                paddingBottom: "30px",
-                margin: "auto",
-                textAlign: "center",
-                fontWeight: "bold",
-              }}
-            >
-              <span>{error}</span>
-            </p>
-          )}
-          <button type="submit">Register</button>
-          <div className="register-link">
-            <p>
-              Already have an account? <Link to="/login">Login</Link>
-            </p>
-          </div>
-        </form>
+            <button type="submit">Register</button>
+            <div className="register-link">
+              <p>
+                Already have an account? <Link to="/login">Login</Link>
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

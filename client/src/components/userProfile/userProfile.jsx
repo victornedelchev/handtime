@@ -26,7 +26,7 @@ export default function UserProfile() {
   }, []);
 
   return (
-    <>
+    <div className="user-profile">
       <div className="user-profile-container">
         <h2>User Profile</h2>
         <div className="profile-info">
@@ -71,6 +71,6 @@ export default function UserProfile() {
           </div>
         )}
       </section>
-    </>
+    </div>
   );
 }
