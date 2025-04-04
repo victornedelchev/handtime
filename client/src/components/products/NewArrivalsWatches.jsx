@@ -1,25 +1,15 @@
-import { useEffect, useState } from "react";
 import { useGetLatestWatches } from "../../hooks/useWatches";
 import Loader from "../Loader/Loader";
 import WatchListItem from "./watch-list-item.jsx/WatchListItem";
+import useLoadingEffect from "../../hooks/useLoadingEffect";
 
 export default function NewArrivalsWatches() {
-  const [loading, setLoading] = useState(true);
+  const [isLoading] = useLoadingEffect();
   const [watches] = useGetLatestWatches();
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLoading(false);
-    }, 600);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
 
   return (
     <section className="product_section ">
-      {loading ? (
+      {isLoading ? (
         <Loader />
       ) : (
         <div className="container">

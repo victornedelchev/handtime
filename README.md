@@ -27,6 +27,8 @@ SoftUni React Project
 - [x] Abstract requester
 - [x] Add watches API
 - [x] Add weather API
+- [x] Add comments API
+- [x] Add profile API
 
 ## 4. Page implementation
 
@@ -45,6 +47,10 @@ SoftUni React Project
 ## 5. API hooks
 
 - [x] Watches API hook
+- [x] Form API hook
+- [x] Comments API hook
+- [x] Weather API hook
+- [x] Profile API hook
 
 ## 6.Authentication
 
@@ -105,3 +111,4 @@ SoftUni React Project
 - [x] Add Weather component
 - [x] Add functionality for user-added watches
 - [x] Add search functionality for watches
+- [ ] Add

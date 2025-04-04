@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 
 import { Link, useNavigate, useParams } from "react-router-dom";
 
@@ -12,26 +12,19 @@ import watchesAPI from "../../api/watches-api";
 import DeleteModal from "./deleteModal/DeleteModal";
 import useForm from "../../hooks/useForm";
 import dateFormatter from "../../utils/dateFormatter";
+import useLoadingEffect from "../../hooks/useLoadingEffect";
 
 export default function Details() {
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
   const { watchId } = useParams();
   const navigate = useNavigate();
   const [watch] = useOneWatch(watchId);
   const { userId, username } = useAuthContext();
   const createComment = useCreateComment();
   const [comments, setComments] = useGetAllComments(watchId);
+  const [isLoading] = useLoadingEffect();
   const [error, setError] = useState("");
   const { isAuthenticated } = useContext(AuthContext);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsLoading(false);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   const initialValues = {
     comment: "",

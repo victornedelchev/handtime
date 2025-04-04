@@ -1,27 +1,18 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useGetAllWatches } from "../../hooks/useWatches";
 import Loader from "../Loader/Loader";
 import WatchListItem from "./watch-list-item.jsx/WatchListItem";
+import useLoadingEffect from "../../hooks/useLoadingEffect";
 
 export default function TopSaleWatches() {
-  const [loading, setLoading] = useState(true);
+  const [isLoading] = useLoadingEffect();
   const [search, setSearch] = useState("");
   const [watches] = useGetAllWatches();
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLoading(false);
-    }, 500);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
 
   return (
     <>
       <section className="product_section ">
-        {loading ? (
+        {isLoading ? (
           <Loader />
         ) : (
           <div className="container">
