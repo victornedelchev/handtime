@@ -164,7 +164,7 @@
   padding: 10px;
   border: 2px solid #ccc;
   border-radius: 5px;
-  resize: vertical;
+  resize: none;
   margin-bottom: 10px;
 }
 
