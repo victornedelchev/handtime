@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { Link, useNavigate, useParams } from "react-router-dom";
 
@@ -15,6 +15,7 @@ import dateFormatter from "../../utils/dateFormatter";
 
 export default function Details() {
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const { watchId } = useParams();
   const navigate = useNavigate();
   const [watch] = useOneWatch(watchId);
@@ -23,6 +24,14 @@ export default function Details() {
   const [comments, setComments] = useGetAllComments(watchId);
   const [error, setError] = useState("");
   const { isAuthenticated } = useContext(AuthContext);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const initialValues = {
     comment: "",
@@ -104,7 +113,7 @@ export default function Details() {
                   <h3>Specifications</h3>
                   {watch.summary}
                 </div>
-                {(isAuthenticated && isOwner) && (
+                {isAuthenticated && isOwner && (
                   <div className="details-actions">
                     <Link to={`/watches/${watchId}/edit`} className="btn-edit">
                       Edit
@@ -126,9 +135,10 @@ export default function Details() {
       <div className="comments-container">
         <h3>Comments</h3>
 
-        <p>Loading comments...</p>
         <p className="error-message"></p>
-        {comments.length > 0 ? (
+        {isLoading ? (
+          <p>Loading comments...</p>
+        ) : comments.length > 0 ? (
           <ul className="comment-list">
             {comments.map((comment) => (
               <li key={comment._id} className="comment-item">
@@ -144,7 +154,7 @@ export default function Details() {
           <p>No comments yet.</p>
         )}
 
-        {(isAuthenticated && !isOwner) && (
+        {isAuthenticated && !isOwner && (
           <div className="add-comment-section">
             <form onSubmit={submitHandler}>
               <textarea
