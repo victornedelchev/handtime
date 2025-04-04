@@ -2,9 +2,13 @@ import WEATHER_URL from "../constants/weatherURL";
 import * as requester from "./requester";
 
 const getWeather = async () => {
-  const result = await requester.get(WEATHER_URL);
-  
-  return result;
+  try {
+    const result = await requester.get(WEATHER_URL);
+
+    return result;
+  } catch (error) {
+    console.error("Error fetching weather data:", error);
+  }
 };
 
 const weatherAPI = {
