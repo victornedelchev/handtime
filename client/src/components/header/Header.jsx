@@ -79,7 +79,13 @@ export default function Header() {
                       Profile
                     </NavLink>
                   </li>
-                  <li style={{ color: "#8019c8", fontWeight: "bold" }}>
+                  <li
+                    style={{
+                      color: "#8019c8",
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
                     WELCOME {username.toUpperCase()}
                   </li>
                 </>
@@ -97,7 +103,9 @@ export default function Header() {
                       Register
                     </NavLink>
                   </li>
-                  <li style={{ color: "#8019c8", marginLeft: "20px" }}>WELCOME GUESTS</li>
+                  <li style={{ color: "#8019c8", marginLeft: "20px" }}>
+                    WELCOME GUESTS
+                  </li>
                 </>
               )}
             </ul>
