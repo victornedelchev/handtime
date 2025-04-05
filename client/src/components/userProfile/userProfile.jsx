@@ -58,7 +58,11 @@ export default function UserProfile() {
         ) : (
           <div className="container">
             <div className="product_heading">
-              <h2>Your watches</h2>
+              {userWatches.length === 1 ? (
+                <h2>Your watch</h2>
+              ) : (
+                <h2>Your watches</h2>
+              )}
             </div>
             <div className="product_container">
               {userWatches.length === 0 && (
