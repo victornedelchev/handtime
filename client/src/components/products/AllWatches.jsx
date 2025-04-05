@@ -4,7 +4,7 @@ import Loader from "../Loader/Loader";
 import WatchListItem from "./watch-list-item.jsx/WatchListItem";
 import useLoadingEffect from "../../hooks/useLoadingEffect";
 
-export default function TopSaleWatches() {
+export default function AllWatches() {
   const [isLoading] = useLoadingEffect();
   const [search, setSearch] = useState("");
   const [watches] = useGetAllWatches();
@@ -17,7 +17,7 @@ export default function TopSaleWatches() {
         ) : (
           <div className="container">
             <div className="product_heading">
-              <h2>Top Sale Watches</h2>
+              <h2>All Watches</h2>
             </div>
             <form className="search_form">
               <input

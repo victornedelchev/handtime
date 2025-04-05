@@ -18,8 +18,6 @@ SoftUni React Project
 - [x] Setup react-router-dom
 - [x] Add routes in App.jsx
 - [x] Add all links in navigation
-- [x] Install tailwind CSS
-- [x] Setup tailwind CSS
 
 ## 3. Create service layer
 
@@ -30,7 +28,11 @@ SoftUni React Project
 - [x] Add comments API
 - [x] Add profile API
 
-## 4. Page implementation
+## 4. React icons
+
+- [x] Install react-icons
+
+## 5. Page implementation
 
 - [x] Watches list
 - [x] Add add persisted data in the server data folder
@@ -41,10 +43,11 @@ SoftUni React Project
 - [x] API function
 - [x] Get one watch
 - [x] Get all watches
+- [x] Get latest watch
 - [x] Add loader
 - [x] Get profile
 
-## 5. API hooks
+## 6. API hooks
 
 - [x] Watches API hook
 - [x] Form API hook
@@ -52,7 +55,7 @@ SoftUni React Project
 - [x] Weather API hook
 - [x] Profile API hook
 
-## 6.Authentication
+## 7.Authentication
 
 - [x] Auth API
   - [x] Login
@@ -73,12 +76,14 @@ SoftUni React Project
 - [x] Logout
 - [x] Authorized request
 
-## 7. UI implementation
+## 8. UI implementation
 
 - [x] Dynamic navigation
 - [x] Create watch
 - [x] API function
 - [x] Create hook
+  - [x] useWether hook
+  - [x] useLoadingEffect hook
 - [x] Form validation
 - [x] Delete watch
   - [x] Add confirmation for delete
@@ -88,7 +93,7 @@ SoftUni React Project
 - [x] Add world clock
 - [x] Add Google maps location
 
-## 8. Comments
+## 9. Comments
 
 - [x] Create service for comments
 - [x] Post comment to the server
@@ -98,7 +103,7 @@ SoftUni React Project
 - [x] Show comment form only for authenticated user
 - [x] Hide comment form for owner
 
-## 9. Refactoring
+## 10. Refactoring
 
 - [x] Extract auth state from App component
 - [x] Persist auth state
@@ -111,4 +116,4 @@ SoftUni React Project
 - [x] Add Weather component
 - [x] Add functionality for user-added watches
 - [x] Add search functionality for watches
-- [ ] Add
+- [x] Separation of the products component of AllWatches component and NewlyAddedWatches component

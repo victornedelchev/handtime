@@ -3,7 +3,7 @@ import Loader from "../Loader/Loader";
 import WatchListItem from "./watch-list-item.jsx/WatchListItem";
 import useLoadingEffect from "../../hooks/useLoadingEffect";
 
-export default function NewArrivalsWatches() {
+export default function NewlyAddedWatches() {
   const [isLoading] = useLoadingEffect();
   const [watches] = useGetLatestWatches();
 
@@ -14,7 +14,7 @@ export default function NewArrivalsWatches() {
       ) : (
         <div className="container">
           <div className="product_heading">
-            <h2>New Arrivals</h2>
+            <h2>Newly Added</h2>
           </div>
           <div className="product_container">
             {watches.length === 0 && (
