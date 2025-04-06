@@ -1,5 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import About from "./components/about/About";
 import Client from "./components/client/Client";
 import Footer from "./components/footer/Footer";
@@ -47,6 +50,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
+      <ToastContainer />
     </AuthContextProvider>
   );
 }
