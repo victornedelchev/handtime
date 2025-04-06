@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 
 import { Link, useNavigate, useParams } from "react-router-dom";
 
+import { toast } from "react-toastify";
+
 import "./details.css";
 
 import { useOneWatch } from "../../hooks/useWatches";
@@ -65,7 +67,8 @@ export default function Details() {
   const watchDeleteHandler = async () => {
     try {
       await watchesAPI.deleteWatch(watchId);
-      navigate("/products");
+      toast.success("Watch deleted successfully!");
+      navigate("/all-watches");
     } catch (error) {
       console.error(error);
     }

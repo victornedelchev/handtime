@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 
+import { toast } from "react-toastify";
+
 import { FaUser } from "react-icons/fa";
 import { LuEye, LuEyeClosed } from "react-icons/lu";
 
@@ -39,6 +41,7 @@ export default function Login() {
 
     try {
       await login(email, password);
+      toast.success("Login successful!");
       navigate("/");
     } catch (error) {
       setError(error.message);

@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { useNavigate, useParams } from "react-router-dom";
 
+import { toast } from "react-toastify";
+
 import { useOneWatch } from "../../hooks/useWatches";
 import useForm from "../../hooks/useForm";
 import watchesAPI from "../../api/watches-api";
@@ -61,6 +63,7 @@ export default function EditWatch() {
     try {
       if (isConfirmed) {
         await watchesAPI.editWatch(watchId, values);
+        toast.success("Watch edited successfully!");
         navigate(`/watches/${watchId}/details`);
       }
     } catch (error) {

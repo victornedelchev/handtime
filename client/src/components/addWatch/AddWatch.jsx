@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
+import { toast } from "react-toastify";
+
 import useForm from "../../hooks/useForm";
 import { useCreateWatch } from "../../hooks/useWatches";
 
@@ -48,6 +50,7 @@ export default function AddWatch() {
 
     try {
       const { _id: watchId } = await createWatch(values);
+      toast.success("Watch added successfully!");
       navigate(`/watches/${watchId}/details`);
     } catch (error) {
       console.error(error);

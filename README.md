@@ -32,6 +32,11 @@ SoftUni React Project
 
 - [x] Install react-icons
 
+## 5. React tostify
+
+- [x] Install react-toastify
+- [x] Setup react-toastify
+
 ## 5. Page implementation
 
 - [x] Watches list

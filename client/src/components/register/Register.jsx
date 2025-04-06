@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 
+import { toast } from "react-toastify";
+
 import { FaUser, FaEnvelope } from "react-icons/fa";
 import { LuEye, LuEyeClosed } from "react-icons/lu";
 
@@ -63,6 +65,7 @@ export default function Register() {
         values.password,
         values.rePassword
       );
+      toast.success("Registration successful!");
       navigate("/");
     } catch (error) {
       setError(error.message);
