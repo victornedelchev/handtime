@@ -1,29 +1,16 @@
-import { useEffect, useState } from "react";
 import { useGetProfile } from "../../hooks/useProfile";
 import { useGetAllWatches } from "../../hooks/useWatches";
 import dateFormatter from "../../utils/dateFormatter";
 import Loader from "../Loader/Loader";
 import WatchListItem from "../products/watch-list-item.jsx/WatchListItem";
 import "./userProfile.css";
+import useLoadingEffect from "../../hooks/useLoadingEffect";
 
 export default function UserProfile() {
-  const [loading, setLoading] = useState(true);
-
+  const [isLoading] = useLoadingEffect();
   const [profile] = useGetProfile();
-
   const [watches] = useGetAllWatches();
-
   const userWatches = watches.filter((watch) => watch._ownerId === profile._id);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLoading(false);
-    }, 500);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
 
   return (
     <div className="user-profile">
@@ -53,7 +40,7 @@ export default function UserProfile() {
         </div>
       </div>
       <section className="product_section ">
-        {loading ? (
+        {isLoading ? (
           <Loader />
         ) : (
           <div className="container">
