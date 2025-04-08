@@ -1,7 +1,7 @@
 import { useGetProfile } from "../../hooks/useProfile";
 import { useGetAllWatches } from "../../hooks/useWatches";
 import dateFormatter from "../../utils/dateFormatter";
-import Loader from "../Loader/Loader";
+import Loader from "../loader/Loader";
 import WatchListItem from "../products/watch-list-item.jsx/WatchListItem";
 import "./userProfile.css";
 import useLoadingEffect from "../../hooks/useLoadingEffect";
