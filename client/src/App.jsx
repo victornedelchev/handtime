@@ -8,7 +8,7 @@ import Client from "./components/client/Client";
 import Footer from "./components/footer/Footer";
 import Info from "./components/info/Info";
 import Home from "./components/home/Home";
-import Header from "./components/Header/Header";
+import Header from "./components/header/Header";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import Logout from "./components/logout/Logout";

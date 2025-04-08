@@ -40,7 +40,7 @@ const useGetCurrentWeatherData = () => {
         const icon = icons[result.weather[0].icon] || clear_icon_day;
 
         setWeatherData({
-          temperature: Math.floor(result.main.temp),
+          temperature: Math.floor(result.main.temp) || 0,
           location: result.name,
           icon: icon,
         });

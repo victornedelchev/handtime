@@ -25,7 +25,7 @@ export default function Info() {
                 <div className="img-box">
                   <img src="images/envelope-white.png" width="18px" alt="" />
                 </div>
-                <p>demo@gmail.com</p>
+                <p>handtime@gmail.com</p>
               </div>
             </div>
           </div>
