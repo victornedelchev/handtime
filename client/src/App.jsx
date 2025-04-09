@@ -4,7 +4,6 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import About from "./components/about/About";
-import Client from "./components/client/Client";
 import Footer from "./components/footer/Footer";
 import Info from "./components/info/Info";
 import Home from "./components/home/Home";
@@ -38,7 +37,6 @@ function App() {
         </Route>
         <Route path="/all-watches" element={<AllWatches />} />
         <Route path="/newly-added-watches" element={<NewAddedWatches />} />
-        <Route path="/client" element={<Client />} />
         <Route element={<GuestProtectedRoutes />}>
           <Route path="/watches/add-watch" element={<AddWatch />} />
           <Route path="/watches/:watchId/edit" element={<EditWatch />} />
