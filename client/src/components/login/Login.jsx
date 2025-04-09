@@ -103,14 +103,6 @@ export default function Login() {
                 <span>{error}</span>
               </p>
             )}
-            <div className="remember-forgot">
-              <label>
-                <input type="checkbox" />
-                Remember me
-              </label>
-              <a href="#">Forgot password</a>
-            </div>
-
             <button type="submit">Login</button>
             <div className="register-link">
               <p>
