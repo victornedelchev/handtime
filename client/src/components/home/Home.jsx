@@ -6,7 +6,7 @@ export default function Home() {
       <div className="hero_area">
         <section className="slider_section ">
           <div className="slider_bg_box">
-            <img src="images/slider-bg.jpg" alt="" />
+            <img src="images/slider-bg.jpg" alt="slider picture" />
           </div>
           <div
             id="customCarousel1"
@@ -98,36 +98,12 @@ export default function Home() {
                           voluptatem a itaque suscipit.
                         </p>
                         <div className="btn-box">
-                          <a href="" className="btn1">
-                            Contact Us
-                          </a>
-                          <a href="" className="btn2">
+                          <Link to="/info" className="btn1">
+                            Info
+                          </Link>
+                          <Link to="/about" className="btn2">
                             About Us
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <div className="container ">
-                  <div className="row">
-                    <div className="col-md-7">
-                      <div className="detail-box">
-                        <h1>Stylish Watches</h1>
-                        <p>
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Minus quidem maiores perspiciatis, illo maxime
-                          voluptatem a itaque suscipit.
-                        </p>
-                        <div className="btn-box">
-                          <a href="" className="btn1">
-                            Contact Us
-                          </a>
-                          <a href="" className="btn2">
-                            About Us
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -144,7 +120,6 @@ export default function Home() {
               <li data-target="#customCarousel1" data-slide-to="1"></li>
               <li data-target="#customCarousel1" data-slide-to="2"></li>
               <li data-target="#customCarousel1" data-slide-to="3"></li>
-              <li data-target="#customCarousel1" data-slide-to="4"></li>
             </ol>
           </div>
         </section>
