@@ -55,14 +55,15 @@ export default function Header() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className={linkClass} to="/client">
-                  Testimonial
-                </NavLink>
-              </li>
-              <li className="nav-item">
                 <NavLink className={linkClass} to="/about">
                   {" "}
                   About
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className={linkClass} to="/info">
+                  {" "}
+                  Info
                 </NavLink>
               </li>
               {isAuthenticated ? (
