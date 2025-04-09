@@ -35,7 +35,7 @@ export default function Login() {
       return setError("Password is required!");
     } else if (password.length < 4) {
       return setError("Password must be at least 4 characters long!");
-    } else if (password.length > 10) {
+    } else if (password.length > 15) {
       return setError("Password cannot exceed more than 15 characters!");
     }
 
