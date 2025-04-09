@@ -795,6 +795,7 @@ a:focus {
 }
 
 .contact_section {
+  min-height: 100vh;
   position: relative;
 }
 
@@ -897,6 +898,15 @@ a:focus {
 
 .contact_section .map_container .map #googleMap {
   height: 100%;
+}
+
+.info_container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #232428;
+  padding: 20px;
 }
 
 .info_section {
