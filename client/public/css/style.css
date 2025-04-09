@@ -903,9 +903,10 @@ a:focus {
 .info_container {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #232428;
+  background-color: #f4f4f9;
   padding: 20px;
 }
 
