@@ -67,7 +67,7 @@ export default function EditWatch() {
   const confirmEditHandler = async () => {
     try {
       await watchesAPI.editWatch(watchId, pendingValues);
-      toast.success("Watch edited successfully!");
+      toast.success(`${pendingValues?.brand} ${pendingValues?.model} edited successfully!`);
       navigate(`/watches/${watchId}/details`);
     } catch (error) {
       console.error(error);

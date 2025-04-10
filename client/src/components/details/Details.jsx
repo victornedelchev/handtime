@@ -67,7 +67,7 @@ export default function Details() {
   const watchDeleteHandler = async () => {
     try {
       await watchesAPI.deleteWatch(watchId);
-      toast.success("Watch deleted successfully!");
+      toast.success(`${watch.brand} ${watch.model} deleted successfully!`);
       navigate("/all-watches");
     } catch (error) {
       console.error(error);
