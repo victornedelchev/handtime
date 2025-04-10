@@ -7,7 +7,8 @@ export default function DeleteModal({
   onConfirm,
 }) {
   return (
-    <div className="modal-overlay" onClick={onClose}>
+    <div className="modal-overlay">
+      <div onClick={onClose} className="modal-backdrop"></div>
       <div className="modal-container">
         <button className="modal-close-button" onClick={onClose}>
           &times;
