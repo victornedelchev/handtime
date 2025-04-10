@@ -8,6 +8,7 @@ import { FaUser } from "react-icons/fa";
 import { LuEye, LuEyeClosed } from "react-icons/lu";
 
 import "./Login.css";
+
 import { useLogin } from "../../hooks/useAuth";
 import useForm from "../../hooks/useForm";
 import { isValidEmail } from "../../utils/validation";
@@ -45,6 +46,7 @@ export default function Login() {
       navigate("/");
     } catch (error) {
       setError(error.message);
+      toast.error("Login failed!");
     }
   };
 

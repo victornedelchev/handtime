@@ -69,6 +69,7 @@ export default function Register() {
       navigate("/");
     } catch (error) {
       setError(error.message);
+      toast.error("Registration failed!");
     }
   };
 
