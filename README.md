@@ -123,6 +123,7 @@ SoftUni React Project
 - [x] Add search functionality for watches
 - [x] Separation of the products component of AllWatches component and NewlyAddedWatches component
 - [x] Add modal for edit watch 
+- [x] Replace confirm with EditModal component
 
 ## Note
 
