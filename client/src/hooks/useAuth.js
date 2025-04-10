@@ -9,11 +9,16 @@ export const useLogin = () => {
   const { changeAuthState } = useContext(AuthContext);
 
   const loginHandler = async (email, password) => {
-    const result = await login(email, password);
-
-    changeAuthState(result);
-
-    return result;
+    try {
+      const result = await login(email, password);
+      changeAuthState(result);
+  
+      return result;
+      
+    } catch (error) {
+      console.error(error);
+      toast.error("Login failed!");
+    }
   };
 
   return loginHandler;
@@ -23,11 +28,15 @@ export const useRegister = () => {
   const { changeAuthState } = useContext(AuthContext);
 
   const registerHandler = async (username, email, password) => {
-    const result = await register(username, email, password);
+    try {
+      const result = await register(username, email, password);
+      changeAuthState(result);
 
-    changeAuthState(result);
-
-    return result;
+      return result;
+    } catch (error) {
+      console.error(error);
+      toast.error("Registration failed!");
+    }
   };
 
   return registerHandler;
@@ -37,9 +46,14 @@ export const useLogout = () => {
   const { logout: localLogout } = useContext(AuthContext);
 
   const logoutHandler = async () => {
-    await logout();
-    localLogout();
-    toast.success("Logout successful!");
+    try {
+      await logout();
+      localLogout();
+      toast.success("Logout successful!");
+    } catch (error) {
+      console.error(error);
+      toast.error("Logout failed!");
+    }
   };
 
   return logoutHandler;
