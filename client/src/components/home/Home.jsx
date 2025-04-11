@@ -21,9 +21,8 @@ export default function Home() {
                       <div className="detail-box">
                         <h1>Stylish Watches</h1>
                         <p>
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Minus quidem maiores perspiciatis, illo maxime
-                          voluptatem a itaque suscipit.
+                          See world time in your local time zone. You can also
+                          set alarms and timers for different time zones.
                         </p>
                         <div className="btn-box">
                           <Link to="/world-clock" className="btn1">
@@ -45,9 +44,10 @@ export default function Home() {
                       <div className="detail-box">
                         <h1>Stylish Watches</h1>
                         <p>
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Minus quidem maiores perspiciatis, illo maxime
-                          voluptatem a itaque suscipit.
+                          Our watches are designed to be both stylish and
+                          functional. Whether you're dressing up for a special
+                          occasion or just want to add a touch of elegance to
+                          your everyday look, we have the perfect watch for you.
                         </p>
                         <div className="btn-box">
                           <Link to="/all-watches" className="btn1">
@@ -69,9 +69,9 @@ export default function Home() {
                       <div className="detail-box">
                         <h1>Stylish Watches</h1>
                         <p>
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Minus quidem maiores perspiciatis, illo maxime
-                          voluptatem a itaque suscipit.
+                          See our latest collection of watches. We have a wide
+                          range of styles and designs to choose from, so you're
+                          sure to find the perfect watch for you.
                         </p>
                         <div className="btn-box">
                           <Link to="/newly-added-watches" className="btn1">
@@ -93,9 +93,9 @@ export default function Home() {
                       <div className="detail-box">
                         <h1>Stylish Watches</h1>
                         <p>
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Minus quidem maiores perspiciatis, illo maxime
-                          voluptatem a itaque suscipit.
+                          Follow us on social media to stay updated on our
+                          latest collections. We love to see how you style our
+                          watches, so don't forget to tag us in your photos!
                         </p>
                         <div className="btn-box">
                           <Link to="/info" className="btn1">
