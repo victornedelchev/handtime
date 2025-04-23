@@ -31,7 +31,7 @@ export default function EditWatch() {
     } else if (values.brand.length < 3) {
       return setError("Brand must be more than 2 characters!");
     } else if (values.brand.length > 30) {
-      return setError("Brand cannot exceed more than 15 characters!");
+      return setError("Brand cannot exceed more than 30 characters!");
     }
 
     if (!values.model) {

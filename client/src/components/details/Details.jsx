@@ -18,6 +18,7 @@ import useLoadingEffect from "../../hooks/useLoadingEffect";
 
 export default function Details() {
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [error, setError] = useState("");
   const { watchId } = useParams();
   const navigate = useNavigate();
   const [watch] = useOneWatch(watchId);
@@ -25,7 +26,6 @@ export default function Details() {
   const createComment = useCreateComment();
   const [comments, setComments] = useGetAllComments(watchId);
   const [isLoading] = useLoadingEffect();
-  const [error, setError] = useState("");
   const { isAuthenticated } = useContext(AuthContext);
 
   const initialValues = {
